@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="buttonSize">70dp</dimen>
+    <dimen name="buttondistance">10dp</dimen>
+    <dimen name="textSizes">18sp</dimen>
+    <dimen name="buttonsup">5dp</dimen>
+    <dimen name="OptionsALLtop">30dp</dimen>
+    <dimen name="titleLangOptions">25sp</dimen>
+    <dimen name="imagesTOPscreenMenu">40dp</dimen>
+    <dimen name="imagesTOPscreenOption">20dp</dimen>
+
+</resources>

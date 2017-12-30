@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">The Biggest Quiz </string>
+    <string name="newgame">New game</string>
+    <string name="options">Options</string>
+    <string name="achievments">achievements</string>
+    <string name="store">store</string>
+    <string name="share">share</string>
+    <string name="Music">Music</string>
+    <string name="se">Sound</string>
+    <string name="soundoptions">Sound Options</string>
+    <string name="languagechoice">Choose Language</string>
+    <string name="title_activity_myth">MythActivity</string>
+    <string name="title_activity_geo">GeoActivity</string>
+    <string name="title_activity_hist">HistActivity</string>
+    <string name="title_activity_music">MusicActivity</string>
+</resources>
