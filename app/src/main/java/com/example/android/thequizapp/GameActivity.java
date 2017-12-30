@@ -1,0 +1,97 @@
+package com.example.android.thequizapp;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by Πακος on 20/12/2017.
+ */
+
+public class GameActivity extends AppCompatActivity {
+
+
+    RecyclerView recyclerView; // antikeimeno poy exei to recyclerview (layout)
+    CategoriesAdapter adapter;
+    List<Category> categoriesList = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.game_main);
+
+        recyclerView = findViewById(R.id.recyclerview);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        categoriesList.add(
+                new Category("Arts","Test your knowledge\n about arts",R.drawable.categoryarts)
+        );
+        categoriesList.add(new Category("Technology","Are you a real geek?\nprove it!!!",R.drawable.categorytechnology));
+
+        categoriesList.add(new Category("Mytholohgy","May the gods be with you",R.drawable.categorymythology));
+
+        categoriesList.add(new Category("Geography","Let's discover the world",R.drawable.categorygeography));
+
+        categoriesList.add(new Category("History","I'm sure you don't rembember\nthat much",R.drawable.categoryhistory));
+
+        categoriesList.add(new Category("Music","Let's rock or pop ",R.drawable.categorymusic));
+
+        categoriesList.add(new Category("Sports","Muscles and Sports",R.drawable.sports));
+
+        adapter = new CategoriesAdapter(this,categoriesList);
+        recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new CategoriesAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                if (position==0) {
+                    Intent Quizintent = new Intent(getApplicationContext(),QuizActivity.class);
+                    Quizintent.putExtra("position",position);
+                    startActivity(Quizintent);
+
+                }
+                else if(position==1){
+                    Intent Quizintent = new Intent(getApplicationContext(),QuizActivity.class);
+                    Quizintent.putExtra("position",position);
+                    startActivity(Quizintent);
+                }
+                else if(position==2){
+                    Intent Quizintent = new Intent(getApplicationContext(),QuizActivity.class);
+                    Quizintent.putExtra("position",position);
+                    startActivity(Quizintent);
+                }
+                else if(position==3){
+                    Intent Quizintent = new Intent(getApplicationContext(),QuizActivity.class);
+                    Quizintent.putExtra("position",position);
+                    startActivity(Quizintent);
+                }
+                else if(position==4){
+                    Intent Quizintent = new Intent(getApplicationContext(),QuizActivity.class);
+                    Quizintent.putExtra("position",position);
+                    startActivity(Quizintent);
+                }
+                else if(position==5){
+                    Intent Quizintent = new Intent(getApplicationContext(),QuizActivity.class);
+                    Quizintent.putExtra("position",position);
+                    startActivity(Quizintent);
+                }
+                else if(position==6){
+                    Intent Quizintent = new Intent(getApplicationContext(),QuizActivity.class);
+                    Quizintent.putExtra("position",position);
+                    startActivity(Quizintent);
+                }
+
+
+
+
+            }
+        });
+    }
+
+
+}
