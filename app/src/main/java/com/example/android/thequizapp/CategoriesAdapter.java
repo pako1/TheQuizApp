@@ -1,8 +1,5 @@
 package com.example.android.thequizapp;
 
-/**
- * Created by Πακος on 22/12/2017.
- */
 
 
 import android.content.Context;
@@ -10,17 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.List;
-
-/**
- *RecyclerView.ADAPTER
- * RecyclerView.ViewHolder
- */
-
 
 
 public  class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder>{
@@ -30,7 +19,7 @@ public  class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.C
     private List<Category> categoryList;
 
 
-    public CategoriesAdapter(Context mctx, List<Category> categoryList) {
+    CategoriesAdapter(Context mctx, List<Category> categoryList) {
         this.mctx = mctx;
         this.categoryList = categoryList;
     }
@@ -50,6 +39,13 @@ public  class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.C
         holder.textviewTittle.setText(categories.getTittle());
         holder.textViewsubtittle.setText(categories.getSubtittle());
         holder.imageView.setImageDrawable(mctx.getResources().getDrawable(categories.getImage()));
+        if (categories.isImageChanged()){
+            holder.lock.setImageResource(R.drawable.unlock);
+        }
+        else{
+            holder.lock.setImageResource(R.drawable.lock);
+        }
+
     }
 
     @Override
@@ -64,21 +60,24 @@ public  class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.C
 
     }
 
+
     public void setOnItemClickListener(OnItemClickListener listener){
         mListener = listener;
     }
 
     public static class CategoriesViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView imageView,goview;
+        ImageView imageView,lock;
         TextView textviewTittle,textViewsubtittle;
 
         public CategoriesViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
+
             imageView = itemView.findViewById(R.id.imageView);
             textviewTittle = itemView.findViewById(R.id.textviewTittle);
             textViewsubtittle = itemView.findViewById(R.id.textViewsubtittle);
-            goview          = itemView.findViewById(R.id.goview);
+            lock = itemView.findViewById(R.id.lock);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

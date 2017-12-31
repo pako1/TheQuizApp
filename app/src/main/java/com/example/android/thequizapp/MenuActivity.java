@@ -1,9 +1,8 @@
 package com.example.android.thequizapp;
 
 import android.content.Intent;
-import android.media.MediaPlayer;
+
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,10 +28,10 @@ public class MenuActivity extends BaseClass {
         setUp();
 
 
-       newgame.setOnClickListener(new View.OnClickListener() {
+        newgame.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-
+                clickSound();
                Intent gameIntent = new Intent(MenuActivity.this, GameActivity.class);
                startActivity(gameIntent);
 
@@ -44,6 +43,7 @@ public class MenuActivity extends BaseClass {
        achievments.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               clickSound();
                Intent achievIntent = new Intent(MenuActivity.this, AchievmentActivity.class);
                startActivity(achievIntent);
 
@@ -53,6 +53,7 @@ public class MenuActivity extends BaseClass {
        options.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               clickSound();
                Intent optionsIntent = new Intent(MenuActivity.this, OptionsActivity.class);
                startActivity(optionsIntent);
            }
@@ -61,7 +62,7 @@ public class MenuActivity extends BaseClass {
        store.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-
+                clickSound();
                Intent storeIntent = new Intent(MenuActivity.this, StoreActivity.class);
                startActivity(storeIntent);
            }
@@ -105,15 +106,21 @@ public class MenuActivity extends BaseClass {
     @Override
     protected void onPause() {
         super.onPause();
-
+        basePause();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        baseResume();
     }
 
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 
     public void setUp() {
 

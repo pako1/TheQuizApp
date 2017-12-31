@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Binder;
 import android.os.IBinder;
+import android.widget.Toast;
 
 
 public class MusicService extends Service
@@ -55,11 +56,12 @@ public class MusicService extends Service
     {
         try
         {
-            player = MediaPlayer.create(this,R.raw.sound);
-            player.setLooping(true);
-            player.setVolume(0.1f, 0.1f);
-            player.start();
-
+            if(player == null || !player.isPlaying()) {
+                player = MediaPlayer.create(this, R.raw.sound);
+                player.setLooping(true);
+                player.setVolume(0.6f, 0.6f);
+                player.start();
+            }
         }
         catch(Exception e)
         {
@@ -70,7 +72,7 @@ public class MusicService extends Service
 
     public void pause()
     {
-        if(null != player && player.isPlaying())
+        if(player.isPlaying() && null != player)
         {
             player.pause();
             length = player.getCurrentPosition();
@@ -82,7 +84,7 @@ public class MusicService extends Service
     {
         try
         {
-            if(null != player && !player.isPlaying())
+            if(player != null && !player.isPlaying())
             {
                 player.seekTo(length);
                 player.start();

@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
  * Created by Πακος on 20/12/2017.
  */
 
-public class AchievmentActivity extends AppCompatActivity {
+public class AchievmentActivity extends BaseClass {
 
 
     @Override
@@ -16,5 +16,19 @@ public class AchievmentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.achievment_main);
   }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        basePause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        baseResume();
+    }
+
+
 
 }

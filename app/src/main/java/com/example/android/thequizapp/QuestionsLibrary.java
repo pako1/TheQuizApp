@@ -5,28 +5,24 @@ package com.example.android.thequizapp;
 public class QuestionsLibrary {
 
 
-/*
-*
-* Art Questions
-*
-* */
-
 
     private String mQuestion[] = {
 
             "who are you?",
             "what are you?",
-            "fuck you?",
+            "you?",
             "are you tziano mamo?",
+            "people are insane?",
+            "where are you from?"
 
     };
 
 
     private String mChoices[][] ={{"fi","mari","ele"}
-,{"kota","pouli","psari"} ,{"yes","yeaah","no"} ,{"yeah","yeah","yeaah"}};
+,{"kota","pouli","psari"} ,{"yes","yeaah","no"} ,{"yeah","yeah","yeaah"},{"no","sure","yeaah"},{"greek","german","pak"}};
 
 
-    private String mCorrectAns[] = {"fi","kota","yes","yeah"};
+    private String mCorrectAns[] = {"fi","kota","yes","yeah","no","greek"};
 
     // pairnw erwtisi apo pinaka
     public String getQuestion(int a){

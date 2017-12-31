@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 public class BaseClass extends AppCompatActivity {
     private MusicService mBoundService;
     private boolean mIsBound = false;
-
+    MediaPlayer mMediaplayer;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -21,6 +22,43 @@ public class BaseClass extends AppCompatActivity {
     }
 
 
+    protected void ToggleSoundOn(){
+        mMediaplayer = MediaPlayer.create(this,R.raw.togglebuttonon);
+        mMediaplayer.setVolume(0.2f,0.2f);
+        mMediaplayer.start();
+
+    }
+
+    protected void ToggleSoundOff(){
+        mMediaplayer = MediaPlayer.create(this,R.raw.togglebuttonoff);
+        mMediaplayer.setVolume(0.2f,0.2f);
+        mMediaplayer.start();
+
+    }
+
+
+
+
+    protected void clickSound(){
+        mMediaplayer = MediaPlayer.create(this,R.raw.buttonsclick);
+        mMediaplayer.setVolume(0.2f,0.2f);
+        mMediaplayer.start();
+    }
+
+    protected void baseStop(){
+        try
+        {
+            if(mBoundService != null)
+            {
+                mBoundService.destroy();
+            }
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
 
     protected void baseResume()
     {
@@ -67,7 +105,7 @@ public class BaseClass extends AppCompatActivity {
             // cast its IBinder to a concrete class and directly access it.
             mBoundService = ((MusicService.LocalBinder) service).getService();
 
-            if(null != mBoundService)
+            if(mBoundService != null)
             {
                  mBoundService.play();
             }

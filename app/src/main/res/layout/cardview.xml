@@ -49,13 +49,13 @@
                 android:layout_toEndOf="@id/imageView" />
 
             <ImageView
-                android:id="@+id/goview"
+                android:id="@+id/lock"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
-                android:background="@drawable/go"
                 android:layout_alignParentRight="true"
                 android:layout_centerInParent="true"
                 android:layout_alignParentEnd="true" />
+
 
 
         </RelativeLayout>

@@ -13,4 +13,12 @@
     <string name="title_activity_geo">GeoActivity</string>
     <string name="title_activity_hist">HistActivity</string>
     <string name="title_activity_music">MusicActivity</string>
+    <string name="best_score">Best Score:</string>
+    <string name="lastscore">Score:</string>
+    <string name="question">Question</string>
+    <string name="button1">Button1</string>
+    <string name="button2">Button2</string>
+    <string name="button3">Button3</string>
+    <string name="button4">Button4</string>
+    <string name="position">position</string>
 </resources>
