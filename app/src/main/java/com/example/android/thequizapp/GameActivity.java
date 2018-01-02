@@ -2,16 +2,12 @@ package com.example.android.thequizapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Πακος on 20/12/2017.
- */
 
 public class GameActivity extends BaseClass {
 
@@ -52,6 +48,8 @@ public class GameActivity extends BaseClass {
 
         adapter = new CategoriesAdapter(this, categoriesList);
         recyclerView.setAdapter(adapter);
+
+
         adapter.setOnItemClickListener(new CategoriesAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
@@ -88,10 +86,22 @@ public class GameActivity extends BaseClass {
                     startActivity(Quizintent);
                 }
 
-
             }
         });
     }
+/*
+
+    private void changeImage(int position){
+        if(points>120){
+            categoriesList.get(position).setImageChanged(true);
+            }
+        else{
+            categoriesList.get(position).setImageChanged(false);
+        }
+    }
+*/
+
+
 
     @Override
     protected void onPause() {

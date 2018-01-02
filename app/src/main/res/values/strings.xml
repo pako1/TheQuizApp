@@ -21,4 +21,6 @@
     <string name="button3">Button3</string>
     <string name="button4">Button4</string>
     <string name="position">position</string>
+    <string name="subtittle">subtittle</string>
+    <string name="tittle">Tittle</string>
 </resources>

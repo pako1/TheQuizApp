@@ -61,6 +61,7 @@ public  class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.C
     }
 
 
+
     public void setOnItemClickListener(OnItemClickListener listener){
         mListener = listener;
     }

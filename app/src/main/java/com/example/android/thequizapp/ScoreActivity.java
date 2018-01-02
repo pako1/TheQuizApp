@@ -2,8 +2,6 @@ package com.example.android.thequizapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.Image;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -38,7 +36,7 @@ public class ScoreActivity extends BaseClass {
             bestScoreView.setText(String.valueOf(score));
             SharedPreferences.Editor editor = mypref.edit();
             editor.putInt("highscore",score);
-            editor.commit();
+            editor.apply();
         }
 
 

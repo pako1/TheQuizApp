@@ -14,10 +14,7 @@ public class MusicService extends Service
     private MediaPlayer player;
     private int length =0;
 
-    /**
-     * Class for clients to access. Because we know this service always runs in
-     * the same process as its clients, we don't need to deal with IPC.
-     */
+
     public class LocalBinder extends Binder
     {
         MusicService getService()

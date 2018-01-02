@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/imageView"
                 android:layout_alignParentTop="true"
-                android:text="Tittle"
+                android:text="@string/tittle"
                 android:textSize="25sp"
                 android:id="@+id/textviewTittle"
                 android:layout_toEndOf="@id/imageView" />
@@ -42,7 +42,7 @@
                 android:id="@+id/textViewsubtittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="subtittle"
+                android:text="@string/subtittle"
                 android:textSize="17sp"
                 android:layout_toRightOf="@id/imageView"
                 android:layout_below="@id/textviewTittle"

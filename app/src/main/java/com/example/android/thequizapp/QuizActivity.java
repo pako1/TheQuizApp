@@ -2,15 +2,11 @@ package com.example.android.thequizapp;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
-import android.media.MediaPlayer;
 import android.os.CountDownTimer;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,9 +28,9 @@ public class QuizActivity extends BaseClass {
     private TextView timer;
     private String mAnswer;
     private int mScore;
-    private int QuestionNumber =0;
-    private int hearts=3;
-    MediaPlayer mMediaplayer;
+    int QuestionNumber =0;
+    int hearts=3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +38,7 @@ public class QuizActivity extends BaseClass {
         setContentView(R.layout.activity_quest);
 
 
-
+        //setup the views
         setup();
         // which category is playing
         Intent intent = getIntent();
@@ -50,7 +46,6 @@ public class QuizActivity extends BaseClass {
         String sin = Integer.toString(intpos);
         position.setText(sin);
 
-        //setup the views
 
         //updating the questions
         updateQuestion();
@@ -133,6 +128,25 @@ public class QuizActivity extends BaseClass {
         });
 
 
+        mButtonChoice4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickSound();
+                if(mButtonChoice4.getText()== mAnswer){
+                    mScore+=10;
+                    updateScore(mScore);
+                    updateQuestion();
+                    Toast.makeText(QuizActivity.this, "Nice done!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(QuizActivity.this, "oh wrong", Toast.LENGTH_SHORT).show();
+                    losingLife();
+                    updateQuestion();
+                }
+            }
+        });
+
+
     }
 
 
@@ -142,6 +156,7 @@ public class QuizActivity extends BaseClass {
         mButtonChoice1.setText(mQuestionLibrary.getChoice1(QuestionNumber));
         mButtonChoice2.setText(mQuestionLibrary.getChoice2(QuestionNumber));
         mButtonChoice3.setText(mQuestionLibrary.getChoice3(QuestionNumber));
+        mButtonChoice4.setText(mQuestionLibrary.getChoice4(QuestionNumber));
         mAnswer = mQuestionLibrary.getCorrectAnswer(QuestionNumber);
         QuestionNumber++;
         ctimer.cancel();
@@ -178,24 +193,20 @@ public class QuizActivity extends BaseClass {
 
     private void losingLife(){
         hearts--;
-        if(hearts==3){
-            heart3.setVisibility(View.GONE);
+        if(hearts==2){
+            heart1.setVisibility(View.GONE);
             ctimer.cancel();
             ctimer.start();
          }
-        if (hearts==2){
+        if (hearts==1){
             heart2.setVisibility(View.GONE);
             ctimer.cancel();
             ctimer.start();
         }
-        if (hearts==1){
-            heart1.setVisibility(View.GONE);
+        if (hearts==0){
+            heart3.setVisibility(View.GONE);
             ctimer.cancel();
-            ctimer.start();
-        }
-        if(hearts==0){
-           ctimer.cancel();
-           goToScore();
+            goToScore();
         }
     }
 
@@ -226,8 +237,8 @@ public class QuizActivity extends BaseClass {
 
 
 
-    private void updateScore(int score){
-        mScoreView.setText(""+ mScore);
+    private void updateScore(int mScore){
+        mScoreView.setText(String.valueOf(mScore));
     }
 
     @Override

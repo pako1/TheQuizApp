@@ -10,7 +10,7 @@ import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 
 
-public class BaseClass extends AppCompatActivity {
+public abstract class BaseClass extends AppCompatActivity {
     private MusicService mBoundService;
     private boolean mIsBound = false;
     MediaPlayer mMediaplayer;
@@ -45,20 +45,6 @@ public class BaseClass extends AppCompatActivity {
         mMediaplayer.start();
     }
 
-    protected void baseStop(){
-        try
-        {
-            if(mBoundService != null)
-            {
-                mBoundService.destroy();
-            }
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-
-    }
 
     protected void baseResume()
     {
