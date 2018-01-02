@@ -1,6 +1,8 @@
 package com.example.android.thequizapp;
 
-import android.content.SharedPreferences;
+
+
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -16,7 +18,8 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
     private ImageButton greeceButton;
     private ImageButton englishButton;
     private ToggleButton musicButton;
-
+    String S_On_Off = "ON";
+    String M_On_off = "ON";
 
 
     @Override
@@ -25,8 +28,6 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
         setContentView(R.layout.options_main);
         setUpViews();
 
-        SharedPreferences sharedPrefs = getSharedPreferences("com.example.xyle", MODE_PRIVATE);
-        musicButton.setChecked(sharedPrefs.getBoolean("music", false));
 
         germanyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +92,9 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
     }
 
 
+
+
+
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
@@ -99,11 +103,15 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
                 musicButton.setBackgroundResource(R.drawable.off);
                 ToggleSoundOff();
                 basePause();
+                S_On_Off = "OFF";
+                setMusicPref(M_On_off);
 
             }
             if (buttonView == soundButton) {
                 soundButton.setBackgroundResource(R.drawable.off);
                 ToggleSoundOff();
+                S_On_Off = "OFF";
+                setSoundPref(S_On_Off);
             }
         } else {
 
@@ -111,19 +119,20 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
                 musicButton.setBackgroundResource(R.drawable.on);
                 ToggleSoundOn();
                 baseResume();
+                M_On_off = "ON";
+                setMusicPref(M_On_off);
 
             }
             if (buttonView == soundButton) {
                 soundButton.setBackgroundResource(R.drawable.on);
                 ToggleSoundOn();
+                M_On_off = "ON";
+                setSoundPref(S_On_Off);
             }
         }
 
 
     }
-
-
-
 
 }
 

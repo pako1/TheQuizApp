@@ -4,21 +4,66 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 
 public abstract class BaseClass extends AppCompatActivity {
     private MusicService mBoundService;
     private boolean mIsBound = false;
     MediaPlayer mMediaplayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         doBindService();
+    }
+
+
+
+    protected String getSoundPref(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        return preferences.getString("SOUND","");
+    }
+
+    protected String getMusicPref(){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        return preferences.getString("MUSIC","");
+    }
+
+
+    protected void setSoundPref(String onORoff){
+        SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = mypref.edit();
+        if (onORoff.equals("ON")) {
+            editor.putString("SOUND","ON");
+            editor.commit();
+        }
+        else{
+            editor.putString("SOUND","OFF");
+            editor.commit();
+        }
+    }
+
+    protected void setMusicPref(String onORoff){
+        SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = mypref.edit();
+        if (onORoff.equals("ON")) {
+            editor.putString("MUSIC","ON");
+            Toast.makeText(this,"set on",Toast.LENGTH_SHORT).show();
+            editor.commit();
+        }
+        else{
+            editor.putString("MUSIC","OFF");
+            Toast.makeText(this,"set off",Toast.LENGTH_SHORT).show();
+            editor.commit();
+        }
     }
 
 

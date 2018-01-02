@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MenuActivity extends BaseClass {
 
@@ -19,14 +20,13 @@ public class MenuActivity extends BaseClass {
     private ImageButton twitter;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_main);
         setUp();
-
+        Music();
+        Sound();
 
         newgame.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -103,6 +103,7 @@ public class MenuActivity extends BaseClass {
        });
     }
 
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -134,6 +135,29 @@ public class MenuActivity extends BaseClass {
     }
 
 
+    public void Music(){
+        String music =getMusicPref();
+        if (music.equals("ON")){
+            basePause();
+
+        }
+        else{
+            baseResume();
+            Toast.makeText(this, "KALA TA LES", Toast.LENGTH_SHORT).show();
+
+        }
+
+    }
+
+    public void Sound(){
+        String sound = getSoundPref();
+        if (sound.equals("ON")){
+            Toast.makeText(this, "sound on", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this,"sound off",Toast.LENGTH_SHORT).show();
+        }
+    }
 
 
 }

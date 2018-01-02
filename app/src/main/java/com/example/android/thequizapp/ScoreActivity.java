@@ -21,23 +21,12 @@ public class ScoreActivity extends BaseClass {
 
         Intent intent = getIntent();
         int score = intent.getIntExtra("score",0);
-
+        //setting up the views
         setup();
 
-
         finalTextScore.setText(String.valueOf(score));
-        SharedPreferences mypref =  getPreferences(MODE_PRIVATE);
-        int highscore = mypref.getInt("highscore",0);
-
-        if (highscore>=score){
-            bestScoreView.setText(String.valueOf(highscore));
-        }
-        else{
-            bestScoreView.setText(String.valueOf(score));
-            SharedPreferences.Editor editor = mypref.edit();
-            editor.putInt("highscore",score);
-            editor.apply();
-        }
+        //calculating the score
+        calculateScore(score);
 
 
         goMenu.setOnClickListener(new View.OnClickListener() {
@@ -71,8 +60,23 @@ public class ScoreActivity extends BaseClass {
         goMenu = findViewById(R.id.gomenu);
         playAgain = findViewById(R.id.playagain);
 
-
     }
+
+    private void calculateScore(int score){
+        SharedPreferences mypref =  getPreferences(MODE_PRIVATE);
+        int highscore = mypref.getInt("highscore",0);
+
+        if (highscore>=score){
+            bestScoreView.setText(String.valueOf(highscore));
+        }
+        else{
+            bestScoreView.setText(String.valueOf(score));
+            SharedPreferences.Editor editor = mypref.edit();
+            editor.putInt("highscore",score);
+            editor.apply();
+        }
+    }
+
 
     @Override
     protected void onPause() {
@@ -85,6 +89,8 @@ public class ScoreActivity extends BaseClass {
         super.onResume();
         baseResume();
     }
+
+
 
 
 

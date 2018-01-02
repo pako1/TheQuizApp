@@ -18,7 +18,7 @@
 
         />
     <ImageView
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/imagesTOPscreenOption"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/achievment"
@@ -41,7 +41,7 @@
             android:orientation="horizontal"
             android:layout_marginTop="40dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="@dimen/imagesTOPscreenOption">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,7 +49,7 @@
                 android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
                 android:text="@string/best_score"
-                android:textSize="40sp" />
+                android:textSize="@dimen/textsizeScore" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,7 +57,7 @@
                 android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
                 android:id="@+id/bestscore"
-                android:textSize="40sp"
+                android:textSize="@dimen/textsizeScore"
                 />
         </LinearLayout>
 
@@ -66,14 +66,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/imagesTOPscreenOption"
             >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lastscore"
                 android:fontFamily="@font/unlock"
-                android:textSize="40sp"
+                android:textSize="@dimen/textsizeScore"
                 android:textColor="@color/ColorFonts"
 
                 />
@@ -84,7 +84,7 @@
                 android:id="@+id/roundScore"
                 android:text=" 0"
                 android:textColor="@color/ColorFonts"
-                android:textSize="40sp"
+                android:textSize="@dimen/textsizeScore"
                 />
         </LinearLayout>
 
@@ -104,7 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/home"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/marginButton"
             android:id="@+id/gomenu"
             />
 
@@ -113,7 +113,7 @@
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/marginButton"
             android:background="@drawable/replay"
             android:id="@+id/playagain"
             />

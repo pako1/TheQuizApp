@@ -17,5 +17,6 @@
     <dimen name="TogglebuttonW">60dp</dimen>
     <dimen name="TogglebuttonH">60dp</dimen>
     <dimen name="something">20dp</dimen>
-
+    <dimen name="textsizeScore">40sp</dimen>
+    <dimen name="marginButton">15dp</dimen>
 </resources>
