@@ -17,13 +17,13 @@ public class AchievmentActivity extends BaseClass {
     @Override
     protected void onPause() {
         super.onPause();
-        basePause();
+        Music();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        baseResume();
+        basePause();
     }
 
 

@@ -112,7 +112,8 @@ public class GameActivity extends BaseClass {
     @Override
     protected void onResume() {
         super.onResume();
-        baseResume();
+        Music();
+
     }
 
 

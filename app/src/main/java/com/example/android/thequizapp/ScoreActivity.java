@@ -24,6 +24,7 @@ public class ScoreActivity extends BaseClass {
         //setting up the views
         setup();
 
+
         finalTextScore.setText(String.valueOf(score));
         //calculating the score
         calculateScore(score);
@@ -87,7 +88,8 @@ public class ScoreActivity extends BaseClass {
     @Override
     protected void onResume() {
         super.onResume();
-        baseResume();
+        Music();
+
     }
 
 

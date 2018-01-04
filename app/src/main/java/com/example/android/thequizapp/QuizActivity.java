@@ -37,7 +37,6 @@ public class QuizActivity extends BaseClass {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quest);
 
-
         //setup the views
         setup();
         // which category is playing
@@ -253,7 +252,8 @@ public class QuizActivity extends BaseClass {
     @Override
     public void onResume() {
         super.onResume();
-        baseResume();
+        Music();
+
     }
 
     @Override

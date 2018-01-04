@@ -26,6 +26,30 @@ public abstract class BaseClass extends AppCompatActivity {
     }
 
 
+    public void Music(){
+        String music =getMusicPref();
+        if (music.equals("ON")){
+            baseResume();
+
+        }
+        if(music.equals("OFF")){
+            basePause();
+        }
+
+    }
+
+    public void Sound(){
+        String sound = getSoundPref();
+        if (sound.equals("ON")){
+            Toast.makeText(this, "sound on", Toast.LENGTH_SHORT).show();
+        }
+        if(sound.equals("OFFx"))
+        {
+            Toast.makeText(this,"sound off",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
     protected String getSoundPref(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

@@ -2,7 +2,6 @@ package com.example.android.thequizapp;
 
 
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -27,7 +26,6 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options_main);
         setUpViews();
-
 
         germanyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +65,8 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
     @Override
     protected void onResume() {
         super.onResume();
-        baseResume();
+        Music();
+
     }
 
 
