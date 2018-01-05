@@ -30,7 +30,7 @@ public class MenuActivity extends BaseClass {
         newgame.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-                clickSound();
+               clickSound();
                Intent gameIntent = new Intent(MenuActivity.this, GameActivity.class);
                startActivity(gameIntent);
 

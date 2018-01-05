@@ -30,10 +30,12 @@ public abstract class BaseClass extends AppCompatActivity {
         String music =getMusicPref();
         if (music.equals("ON")){
             baseResume();
-
+            Toast.makeText(this,"music on",Toast.LENGTH_SHORT).show();
         }
         if(music.equals("OFF")){
             basePause();
+            Toast.makeText(this,"music off",Toast.LENGTH_SHORT).show();
+
         }
 
     }
@@ -43,7 +45,7 @@ public abstract class BaseClass extends AppCompatActivity {
         if (sound.equals("ON")){
             Toast.makeText(this, "sound on", Toast.LENGTH_SHORT).show();
         }
-        if(sound.equals("OFFx"))
+        if(sound.equals("OFF"))
         {
             Toast.makeText(this,"sound off",Toast.LENGTH_SHORT).show();
         }
@@ -67,10 +69,13 @@ public abstract class BaseClass extends AppCompatActivity {
         SharedPreferences.Editor editor = mypref.edit();
         if (onORoff.equals("ON")) {
             editor.putString("SOUND","ON");
+            Toast.makeText(this,"Preference has S on",Toast.LENGTH_SHORT).show();
             editor.commit();
         }
-        else{
+        if(onORoff.equals("OFF")){
             editor.putString("SOUND","OFF");
+            Toast.makeText(this,"Preference has S off",Toast.LENGTH_SHORT).show();
+
             editor.commit();
         }
     }
@@ -80,12 +85,12 @@ public abstract class BaseClass extends AppCompatActivity {
         SharedPreferences.Editor editor = mypref.edit();
         if (onORoff.equals("ON")) {
             editor.putString("MUSIC","ON");
-            Toast.makeText(this,"set on",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Preference has M on",Toast.LENGTH_SHORT).show();
             editor.commit();
         }
-        else{
+        if (onORoff.equals("OFF")){
             editor.putString("MUSIC","OFF");
-            Toast.makeText(this,"set off",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Preference has M off",Toast.LENGTH_SHORT).show();
             editor.commit();
         }
     }

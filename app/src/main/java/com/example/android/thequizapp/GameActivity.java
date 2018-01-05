@@ -89,17 +89,7 @@ public class GameActivity extends BaseClass {
             }
         });
     }
-/*
 
-    private void changeImage(int position){
-        if(points>120){
-            categoriesList.get(position).setImageChanged(true);
-            }
-        else{
-            categoriesList.get(position).setImageChanged(false);
-        }
-    }
-*/
 
 
 
@@ -113,7 +103,7 @@ public class GameActivity extends BaseClass {
     protected void onResume() {
         super.onResume();
         Music();
-
+        Sound();
     }
 
 

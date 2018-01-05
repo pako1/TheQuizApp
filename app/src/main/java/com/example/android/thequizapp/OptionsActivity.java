@@ -10,16 +10,13 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
-public class OptionsActivity extends BaseClass implements CompoundButton.OnCheckedChangeListener {
+public class OptionsActivity extends BaseClass  {
 
     public ToggleButton soundButton;
     private ImageButton germanyButton;
     private ImageButton greeceButton;
     private ImageButton englishButton;
     private ToggleButton musicButton;
-    String S_On_Off = "ON";
-    String M_On_off = "ON";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +47,32 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
             }
         });
 
-        musicButton.setOnCheckedChangeListener(this);
-        soundButton.setOnCheckedChangeListener(this);
+        musicButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                if (isChecked){
+                    musicButton.setBackgroundResource(R.drawable.on);
+                    ToggleSoundOn();
+                    setMusicPref("ON");
+                    Music();
+                }
+                if(!isChecked){
+                    musicButton.setBackgroundResource(R.drawable.off);
+                    ToggleSoundOff();
+                    setMusicPref("OFF");
+                    Music();
+                }
+            }
+        });
 
+
+        soundButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+
+
+            }
+        });
 
     }
 
@@ -70,13 +90,10 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
     }
 
 
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
-
-
 
 
     public void setUpViews() {
@@ -93,45 +110,6 @@ public class OptionsActivity extends BaseClass implements CompoundButton.OnCheck
 
 
 
-
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-        if (isChecked) {
-            if (buttonView == musicButton) {
-                musicButton.setBackgroundResource(R.drawable.off);
-                ToggleSoundOff();
-                basePause();
-                S_On_Off = "OFF";
-                setMusicPref(M_On_off);
-
-            }
-            if (buttonView == soundButton) {
-                soundButton.setBackgroundResource(R.drawable.off);
-                ToggleSoundOff();
-                S_On_Off = "OFF";
-                setSoundPref(S_On_Off);
-            }
-        } else {
-
-            if (buttonView == musicButton) {
-                musicButton.setBackgroundResource(R.drawable.on);
-                ToggleSoundOn();
-                baseResume();
-                M_On_off = "ON";
-                setMusicPref(M_On_off);
-
-            }
-            if (buttonView == soundButton) {
-                soundButton.setBackgroundResource(R.drawable.on);
-                ToggleSoundOn();
-                M_On_off = "ON";
-                setSoundPref(S_On_Off);
-            }
-        }
-
-
-    }
 
 }
 
