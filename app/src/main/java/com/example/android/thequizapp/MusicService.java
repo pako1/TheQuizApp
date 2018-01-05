@@ -57,7 +57,7 @@ public class MusicService extends Service
                 player = MediaPlayer.create(this, R.raw.sound);
                 player.setLooping(true);
                 player.setVolume(0.6f, 0.6f);
-                player.start();
+               // player.start();
             }
         }
         catch(Exception e)

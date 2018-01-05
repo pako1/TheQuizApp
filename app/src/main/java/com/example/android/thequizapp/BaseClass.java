@@ -25,8 +25,14 @@ public abstract class BaseClass extends AppCompatActivity {
         doBindService();
     }
 
+    protected void PlayOrStop(){
 
-    public void Music(){
+
+    }
+
+
+
+    protected void Music(){
         String music =getMusicPref();
         if (music.equals("ON")){
             baseResume();
@@ -40,7 +46,7 @@ public abstract class BaseClass extends AppCompatActivity {
 
     }
 
-    public void Sound(){
+    protected void Sound(){
         String sound = getSoundPref();
         if (sound.equals("ON")){
             Toast.makeText(this, "sound on", Toast.LENGTH_SHORT).show();
@@ -50,6 +56,7 @@ public abstract class BaseClass extends AppCompatActivity {
             Toast.makeText(this,"sound off",Toast.LENGTH_SHORT).show();
         }
     }
+
 
 
 
