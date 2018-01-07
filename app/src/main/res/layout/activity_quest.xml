@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="90dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:src="@drawable/quiz" />
@@ -37,7 +37,7 @@
             android:background="@drawable/circlebackground"
             android:gravity="center"
             android:layout_centerInParent="true"
-            android:textSize="35sp" />
+            android:textSize="30sp" />
 
 
         <TextView
@@ -49,7 +49,7 @@
             android:background="@drawable/circlebackground"
             android:gravity="center"
             android:text="0"
-            android:textSize="35sp" />
+            android:textSize="30sp" />
 
 
 
@@ -95,8 +95,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/HeaderQuestion"
         android:background="@drawable/questionbackground"
+        android:padding="25dp"
         android:gravity="center"
-        android:padding="40dp"
         android:text="@string/question"
         android:textSize="25sp" />
 

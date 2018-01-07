@@ -1,5 +1,23 @@
-package com.example.android.thequizapp;
+/*
 
+
+
+
+
+
+// old way to create questions .
+// Now using the database
+
+
+
+
+
+
+
+
+
+
+package com.example.android.thequizapp;
 
 
 class QuestionsLibrary {
@@ -58,3 +76,4 @@ class QuestionsLibrary {
 
 
 }
+*/

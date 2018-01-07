@@ -13,7 +13,8 @@ import android.widget.Toast;
 public class QuizActivity extends BaseClass {
 
 
-    private QuestionsLibrary mQuestionLibrary = new QuestionsLibrary();
+
+    private QuestionBank mQuestionLibrary = new QuestionBank();
 
     private TextView mScoreView;
     private TextView mQuestionView;
@@ -31,7 +32,6 @@ public class QuizActivity extends BaseClass {
     int QuestionNumber =0;
     int hearts=3;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +47,8 @@ public class QuizActivity extends BaseClass {
 
 
         //updating the questions
+        mQuestionLibrary.initQuestions(getApplicationContext());
         updateQuestion();
-
 
 
         mButtonChoice1.setOnClickListener(new View.OnClickListener() {
@@ -151,12 +151,12 @@ public class QuizActivity extends BaseClass {
 
     private void updateQuestion(){
         if(QuestionNumber<mQuestionLibrary.getLength()){
-        mQuestionView.setText(mQuestionLibrary.getQuestion(QuestionNumber));
-        mButtonChoice1.setText(mQuestionLibrary.getChoice1(QuestionNumber));
-        mButtonChoice2.setText(mQuestionLibrary.getChoice2(QuestionNumber));
-        mButtonChoice3.setText(mQuestionLibrary.getChoice3(QuestionNumber));
-        mButtonChoice4.setText(mQuestionLibrary.getChoice4(QuestionNumber));
-        mAnswer = mQuestionLibrary.getCorrectAnswer(QuestionNumber);
+        mQuestionView.setText(mQuestionLibrary.getQuestion(QuestionNumber).trim());
+        mButtonChoice1.setText(mQuestionLibrary.getChoice(QuestionNumber, 1).trim());
+        mButtonChoice2.setText(mQuestionLibrary.getChoice(QuestionNumber,2).trim());
+        mButtonChoice3.setText(mQuestionLibrary.getChoice(QuestionNumber,3).trim());
+        mButtonChoice4.setText(mQuestionLibrary.getChoice(QuestionNumber,4).trim());
+        mAnswer = mQuestionLibrary.getCorrectAnswer(QuestionNumber).trim();
         QuestionNumber++;
         ctimer.cancel();
         timer.setTextColor(getResources().getColor(R.color.ColorFonts));
@@ -174,6 +174,7 @@ public class QuizActivity extends BaseClass {
         @Override
         public void onTick(long l) {
             timer.setText(String.valueOf(l / 1000));
+
             if(l<=4000){
                 timer.setTextColor(Color.RED);
             }
@@ -253,6 +254,7 @@ public class QuizActivity extends BaseClass {
     public void onResume() {
         super.onResume();
         Music();
+
 
     }
 

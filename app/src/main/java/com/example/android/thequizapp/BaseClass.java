@@ -25,10 +25,6 @@ public abstract class BaseClass extends AppCompatActivity {
         doBindService();
     }
 
-    protected void PlayOrStop(){
-
-
-    }
 
 
 
@@ -77,7 +73,7 @@ public abstract class BaseClass extends AppCompatActivity {
         if (onORoff.equals("ON")) {
             editor.putString("SOUND","ON");
             Toast.makeText(this,"Preference has S on",Toast.LENGTH_SHORT).show();
-            editor.commit();
+            editor.apply();
         }
         if(onORoff.equals("OFF")){
             editor.putString("SOUND","OFF");
@@ -93,7 +89,7 @@ public abstract class BaseClass extends AppCompatActivity {
         if (onORoff.equals("ON")) {
             editor.putString("MUSIC","ON");
             Toast.makeText(this,"Preference has M on",Toast.LENGTH_SHORT).show();
-            editor.commit();
+            editor.apply();
         }
         if (onORoff.equals("OFF")){
             editor.putString("MUSIC","OFF");
@@ -101,6 +97,7 @@ public abstract class BaseClass extends AppCompatActivity {
             editor.commit();
         }
     }
+
 
 
     protected void ToggleSoundOn(){

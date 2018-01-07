@@ -1,7 +1,6 @@
 package com.example.android.thequizapp;
 
 
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -51,16 +50,17 @@ public class OptionsActivity extends BaseClass  {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
                 if (isChecked){
-                    musicButton.setBackgroundResource(R.drawable.on);
                     ToggleSoundOn();
                     setMusicPref("ON");
+                    setupOnorOff();
                     Music();
                 }
                 if(!isChecked){
-                    musicButton.setBackgroundResource(R.drawable.off);
                     ToggleSoundOff();
                     setMusicPref("OFF");
+                    setupOnorOff();
                     Music();
+
                 }
             }
         });
@@ -76,6 +76,8 @@ public class OptionsActivity extends BaseClass  {
 
     }
 
+
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -86,8 +88,30 @@ public class OptionsActivity extends BaseClass  {
     protected void onResume() {
         super.onResume();
         Music();
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        setupOnorOff();
+        Music();
+    }
+
+
+
+
+    private void setupOnorOff(){
+
+        String check = getMusicPref();
+        if (check.equals("ON")){
+            musicButton.setBackgroundResource(R.drawable.on);
+        }
+        if (check.equals("OFF")){
+            musicButton.setBackgroundResource(R.drawable.off);
+        }
 
     }
+
 
 
     @Override
@@ -96,7 +120,7 @@ public class OptionsActivity extends BaseClass  {
     }
 
 
-    public void setUpViews() {
+    private void setUpViews() {
 
         germanyButton = findViewById(R.id.germanyButton);
         greeceButton = findViewById(R.id.greeceButton);
@@ -104,9 +128,7 @@ public class OptionsActivity extends BaseClass  {
         musicButton = findViewById(R.id.music);
         soundButton = findViewById(R.id.sound);
 
-
     }
-
 
 
 
