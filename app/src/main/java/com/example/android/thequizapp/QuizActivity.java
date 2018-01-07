@@ -55,7 +55,7 @@ public class QuizActivity extends BaseClass {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(mButtonChoice1.getText()== mAnswer){
+                if(mButtonChoice1.getText().equals(mAnswer)){
                     mScore+=10;
                     updateScore(mScore);
                     updateQuestion();
@@ -74,7 +74,7 @@ public class QuizActivity extends BaseClass {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(mButtonChoice2.getText()== mAnswer){
+                if(mButtonChoice2.getText().equals(mAnswer)){
                     mScore+=10;
                     updateScore(mScore);
                     updateQuestion();
@@ -93,7 +93,7 @@ public class QuizActivity extends BaseClass {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(mButtonChoice1.getText()== mAnswer){
+                if(mButtonChoice1.getText().equals(mAnswer)){
                     mScore+=10;
                     updateScore(mScore);
                     updateQuestion();
@@ -112,7 +112,7 @@ public class QuizActivity extends BaseClass {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(mButtonChoice3.getText()== mAnswer){
+                if(mButtonChoice3.getText().equals(mAnswer)){
                     mScore+=10;
                     updateScore(mScore);
                     updateQuestion();
@@ -131,7 +131,7 @@ public class QuizActivity extends BaseClass {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(mButtonChoice4.getText()== mAnswer){
+                if(mButtonChoice4.getText().equals(mAnswer)){
                     mScore+=10;
                     updateScore(mScore);
                     updateQuestion();
