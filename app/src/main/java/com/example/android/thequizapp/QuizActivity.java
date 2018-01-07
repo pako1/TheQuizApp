@@ -227,7 +227,7 @@ public class QuizActivity extends BaseClass {
         mButtonChoice1 = findViewById(R.id.choice1);
         mButtonChoice2 = findViewById(R.id.choice2);
         mButtonChoice3 = findViewById(R.id.choice3);
-        mButtonChoice4 = findViewById(R.id.choice4); // not implemented yet
+        mButtonChoice4 = findViewById(R.id.choice4);
         heart1 =findViewById(R.id.heart1);
         heart2 =findViewById(R.id.heart2);
         heart3 =findViewById(R.id.heart3);
