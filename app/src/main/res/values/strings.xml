@@ -9,18 +9,37 @@
     <string name="se">Sound</string>
     <string name="soundoptions">Sound Options</string>
     <string name="languagechoice">Choose Language</string>
-    <string name="title_activity_myth">MythActivity</string>
-    <string name="title_activity_geo">GeoActivity</string>
-    <string name="title_activity_hist">HistActivity</string>
-    <string name="title_activity_music">MusicActivity</string>
     <string name="best_score">Best Score:</string>
     <string name="lastscore">Score:</string>
     <string name="question">Question</string>
-    <string name="button1">Button1</string>
-    <string name="button2">Button2</string>
-    <string name="button3">Button3</string>
-    <string name="button4">Button4</string>
     <string name="position">position</string>
     <string name="subtittle">subtittle</string>
     <string name="tittle">Tittle</string>
+
+    <!--Category tittles-->
+
+    <string name="Technology">Technology</string>
+    <string name="Arts">Arts</string>
+    <string name="Mytholohgy">Mytholohgy</string>
+    <string name="Geography">Geography</string>
+    <string name="CategoryMusic">Music</string>
+    <string name="History">History</string>
+    <string name="Sports">Sports</string>
+
+    <!--Category tittles-->
+
+
+    <!--Category subtittles-->
+
+    <string name="artknowledge">Test your knowledge\nin arts</string>
+    <string name="GeekKnowledge">"Are you a real geek?\nprove it!!</string>
+    <string name="mythologyknowledge">May the gods be with you</string>
+    <string name="geographyKnowledge">Lets discover the world</string>
+    <string name="historyknowledge">Im sure you dont rembember\nthat much</string>
+    <string name="musicknowledge">Lets rock or pop</string>
+    <string name="sportknowledge">Muscles and Sports</string>
+
+    <!--Category subtittles-->
+
+
 </resources>

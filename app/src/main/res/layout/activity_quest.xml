@@ -118,7 +118,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:background="@drawable/redbutton"
-            android:text="@string/button1" />
+             />
 
         <Button
             android:id="@+id/choice2"
@@ -128,7 +128,6 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:background="@drawable/greenbutton"
-            android:text="@string/button2"
 
             />
 
@@ -140,7 +139,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:background="@drawable/yellobutton"
-            android:text="@string/button3" />
+             />
 
         <Button
             android:id="@+id/choice4"
@@ -150,7 +149,7 @@
             android:layout_marginLeft="35dp"
             android:layout_marginRight="35dp"
             android:background="@drawable/purplebutton"
-            android:text="@string/button4" />
+            />
     </LinearLayout>
 
     <TextView

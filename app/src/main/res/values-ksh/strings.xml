@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="newgame">"Neues Spiel "</string>
+    <string name="options">Optionen</string>
+    <string name="achievments">Leistungen</string>
+    <string name="store">Laden</string>
+    <string name="share">share</string>
+    <string name="Music">Musik</string>
+    <string name="se">Effekte</string>
+    <string name="soundoptions">Sound Effekte</string>
+    <string name="languagechoice">Sprache wählen</string>
+    <string name="best_score">Beste Points</string>
+    <string name="lastscore">Points</string>
+    <string name="question">Frage</string>
+    <string name="position">position</string>
+    <string name="subtittle">Untertitel</string>
+    <string name="tittle">Tittel</string>
+    <string name="Technology">Technologie</string>
+    <string name="Arts">Kunst</string>
+    <string name="Mytholohgy">Mythologie</string>
+    <string name="Geography">"Geographie "</string>
+    <string name="CategoryMusic">Musik</string>
+    <string name="History">"Geschichte "</string>
+    <string name="Sports">Sport</string>
+    <string name="artknowledge">Teste dein Wissen</string>
+    <string name="GeekKnowledge">"Bist du ein echter Geek? "</string>
+    <string name="mythologyknowledge">May the gods be with you</string>
+    <string name="geographyKnowledge">Lass uns die Welt entdecken</string>
+    <string name="historyknowledge">kannst du dich an so viel errinern?</string>
+    <string name="musicknowledge">Lets rock or pop</string>
+    <string name="sportknowledge">Muskeln und Sport</string>
+</resources>
