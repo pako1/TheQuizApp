@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The Biggest Quiz</string>
+    <string name="newgame">Νέο παιχνίδι</string>
+    <string name="options">Ρυθμίσεις</string>
+    <string name="achievments">Επιτεύγματα</string>
+    <string name="store">κατάστημα</string>
+    <string name="share">δημοσίευεσε</string>
+    <string name="Music">Μουσική</string>
+    <string name="se">Εφέ</string>
+    <string name="soundoptions">Εφέ</string>
+    <string name="languagechoice">Επιλογή Γλώσσας</string>
+    <string name="best_score">Καλύτερο σκόρ</string>
+    <string name="lastscore">σκόρ</string>
+    <string name="question">Ερώτηση</string>
+    <string name="position">θέση</string>
+    <string name="subtittle">υπότιτλος</string>
+    <string name="tittle">τίτλος</string>
+    <string name="Technology">Τεχνολογία</string>
+    <string name="Arts">Τέχνες</string>
+    <string name="Mytholohgy">Μυθολογία</string>
+    <string name="Geography">Γεωγραφία</string>
+    <string name="CategoryMusic">Μουσική</string>
+    <string name="History">Ιστορία</string>
+    <string name="Sports">Αθλήματα</string>
+    <string name="artknowledge">Δοκίμασε τις γνώσεις σου</string>
+    <string name="GeekKnowledge">Πόσο nerd είσαι ?</string>
+    <string name="mythologyknowledge">Οι θεοί μαζί σου</string>
+    <string name="geographyKnowledge">Ας ανακαλύψουμε το κόσμο</string>
+    <string name="historyknowledge">Δεν παίζει να θυμάσαι τόσα</string>
+    <string name="musicknowledge">"Ας ροκάρουμε "</string>
+    <string name="sportknowledge">Μύες και γυμναστική</string>
+</resources>
