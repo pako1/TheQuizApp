@@ -1,6 +1,7 @@
 package com.example.android.thequizapp;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -18,10 +19,14 @@ public class MenuActivity extends BaseClass  {
     private ImageButton twitter;
 
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_main);
+        String lang = loadLocale();
+        changeLocale(lang);
         setUp();
 
 

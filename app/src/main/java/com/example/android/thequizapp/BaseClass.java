@@ -37,6 +37,7 @@ public abstract class BaseClass extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(config,
                 getBaseContext().getResources().getDisplayMetrics());
 
+
     }
 
     protected void saveLocale(String lang) {
@@ -51,8 +52,6 @@ public abstract class BaseClass extends AppCompatActivity {
         changeLocale(language);
         return language;
     }
-
-
 
 
 

@@ -18,22 +18,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity" />
+        <activity android:name=".MenuActivity"
+            android:configChanges="locale" />
         <activity
             android:name=".GameActivity"
-            android:parentActivityName=".MenuActivity" />
+            android:parentActivityName=".MenuActivity"
+            android:configChanges="locale"
+            />
         <activity
             android:name=".AchievmentActivity"
-            android:parentActivityName=".MenuActivity" />
+            android:parentActivityName=".MenuActivity"
+            android:configChanges="locale"
+            />
         <activity
             android:name=".OptionsActivity"
-            android:parentActivityName=".MenuActivity" />
+            android:parentActivityName=".MenuActivity"
+            android:configChanges="locale"
+            />
         <activity
             android:name=".StoreActivity"
-            android:parentActivityName=".MenuActivity" />
-        <activity android:name=".QuizActivity" />
-        <activity android:name=".ScoreActivity"/>
-        <service android:name=".MusicService"/>
+            android:parentActivityName=".MenuActivity"
+            android:configChanges="locale"/>
+        <activity android:name=".QuizActivity"
+            android:configChanges="locale"/>
+        <activity android:name=".ScoreActivity"
+            android:configChanges="locale"/>
+        <service android:name=".MusicService"
+            android:configChanges="locale"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

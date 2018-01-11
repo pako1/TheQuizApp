@@ -22,10 +22,7 @@
         android:textColor="@color/ColorFonts"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:shadowColor="#000"
-        android:shadowDx="1.3"
-        android:shadowDy="1.5"
-        android:shadowRadius="32"
+        android:id="@+id/languageCh"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/OptionsALLtop"
 
@@ -87,6 +84,7 @@
         android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_margin="@dimen/OptionsALLtop"
+        android:id="@+id/SoundOpt"
         android:textColor="@color/ColorFonts" />
 
 

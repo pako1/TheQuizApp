@@ -2,6 +2,7 @@ package com.example.android.thequizapp;
 
 
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -19,6 +20,7 @@ public class OptionsActivity extends BaseClass {
     private ImageButton englishButton;
     private ToggleButton musicButton;
     String lang;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class OptionsActivity extends BaseClass {
                 lang = "en";
                 changeLocale(lang);
                 saveLocale(lang);
+
             }
         });
         greeceButton.setOnClickListener(new View.OnClickListener() {
@@ -56,6 +59,7 @@ public class OptionsActivity extends BaseClass {
                 lang = "el";
                 changeLocale(lang);
                 saveLocale(lang);
+
             }
         });
 
