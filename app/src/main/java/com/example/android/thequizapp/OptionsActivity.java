@@ -37,6 +37,7 @@ public class OptionsActivity extends BaseClass {
                 lang = "de";
                 changeLocale(lang);
                 saveLocale(lang);
+                recreate();
             }
         });
 
@@ -48,7 +49,7 @@ public class OptionsActivity extends BaseClass {
                 lang = "en";
                 changeLocale(lang);
                 saveLocale(lang);
-
+                recreate();
             }
         });
         greeceButton.setOnClickListener(new View.OnClickListener() {
@@ -59,7 +60,7 @@ public class OptionsActivity extends BaseClass {
                 lang = "el";
                 changeLocale(lang);
                 saveLocale(lang);
-
+                recreate();
             }
         });
 

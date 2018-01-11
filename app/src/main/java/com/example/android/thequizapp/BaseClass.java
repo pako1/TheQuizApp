@@ -46,11 +46,10 @@ public abstract class BaseClass extends AppCompatActivity {
         editor.putString("languageToLoad",lang ).apply();
     }
 
-    protected String loadLocale(){
+    protected void loadLocale(){
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String language = sharedPreferences.getString("languageToLoad", "");
         changeLocale(language);
-        return language;
     }
 
 

@@ -1,7 +1,6 @@
 package com.example.android.thequizapp;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -25,9 +24,9 @@ public class MenuActivity extends BaseClass  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_main);
-        String lang = loadLocale();
-        changeLocale(lang);
-        setUp();
+       setUp();
+       loadLocale();
+       recreate();
 
 
 
@@ -118,7 +117,6 @@ public class MenuActivity extends BaseClass  {
         super.onResume();
         Music();
         Sound();
-        loadLocale();
     }
 
 
@@ -129,8 +127,6 @@ public class MenuActivity extends BaseClass  {
     }
 
     public void setUp() {
-        String lang = loadLocale();
-        changeLocale(lang);
         newgame = findViewById(R.id.newgame);
         options = findViewById(R.id.options);
         achievments = findViewById(R.id.achievments);
@@ -138,6 +134,7 @@ public class MenuActivity extends BaseClass  {
         twitter = findViewById(R.id.twitter);
         fblike = findViewById(R.id.likefb);
         share = findViewById(R.id.share);
+
     }
 
 
