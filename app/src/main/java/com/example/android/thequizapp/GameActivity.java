@@ -16,6 +16,8 @@ public class GameActivity extends BaseClass {
     CategoriesAdapter adapter;
     List<Category> categoriesList = new ArrayList<>();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +63,6 @@ public class GameActivity extends BaseClass {
 
                 } else if (position == 1) {
                     Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
-
                     Quizintent.putExtra("position", position);
                     startActivity(Quizintent);
                 } else if (position == 2) {

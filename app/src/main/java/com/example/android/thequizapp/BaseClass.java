@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
+import java.util.Locale;
 
 
 public abstract class BaseClass extends AppCompatActivity {
@@ -18,12 +20,38 @@ public abstract class BaseClass extends AppCompatActivity {
     private boolean mIsBound = false;
     MediaPlayer mMediaplayer;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         doBindService();
     }
+
+
+    protected void changeLocale(String lang){
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
+
+    }
+
+    protected void saveLocale(String lang) {
+        SharedPreferences languagepref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = languagepref.edit();
+        editor.putString("languageToLoad",lang ).apply();
+    }
+
+    protected String loadLocale(){
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String language = sharedPreferences.getString("languageToLoad", "");
+        changeLocale(language);
+        return language;
+    }
+
 
 
 
@@ -188,11 +216,6 @@ public abstract class BaseClass extends AppCompatActivity {
 
     private void doBindService()
     {
-        // Establish a connection with the service. We use an explicit
-        // class name because we want a specific service implementation that
-        // we know will be running in our own process (and thus won't be
-        // supporting component replacement by other applications).
-
         Intent i = new Intent(getApplicationContext(), MusicService.class);
         bindService(i, mConnection, Context.BIND_AUTO_CREATE);
         mIsBound = true;

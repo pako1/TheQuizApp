@@ -1,6 +1,7 @@
 package com.example.android.thequizapp;
 
 
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -9,13 +10,15 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
-public class OptionsActivity extends BaseClass  {
+
+public class OptionsActivity extends BaseClass {
 
     public ToggleButton soundButton;
     private ImageButton germanyButton;
     private ImageButton greeceButton;
     private ImageButton englishButton;
     private ToggleButton musicButton;
+    String lang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +26,15 @@ public class OptionsActivity extends BaseClass  {
         setContentView(R.layout.options_main);
         setUpViews();
 
+
         germanyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clickSound();
-                Toast.makeText(OptionsActivity.this, "germany", Toast.LENGTH_SHORT).show();
+                Toast.makeText(OptionsActivity.this, "german", Toast.LENGTH_SHORT).show();
+                lang = "de";
+                changeLocale(lang);
+                saveLocale(lang);
             }
         });
 
@@ -36,6 +43,9 @@ public class OptionsActivity extends BaseClass  {
             public void onClick(View v) {
                 clickSound();
                 Toast.makeText(OptionsActivity.this, "english", Toast.LENGTH_SHORT).show();
+                lang = "en";
+                changeLocale(lang);
+                saveLocale(lang);
             }
         });
         greeceButton.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +53,9 @@ public class OptionsActivity extends BaseClass  {
             public void onClick(View v) {
                 clickSound();
                 Toast.makeText(OptionsActivity.this, "greek", Toast.LENGTH_SHORT).show();
+                lang = "el";
+                changeLocale(lang);
+                saveLocale(lang);
             }
         });
 
@@ -75,7 +88,6 @@ public class OptionsActivity extends BaseClass  {
         });
 
     }
-
 
 
     @Override
@@ -121,7 +133,6 @@ public class OptionsActivity extends BaseClass  {
 
 
     private void setUpViews() {
-
         germanyButton = findViewById(R.id.germanyButton);
         greeceButton = findViewById(R.id.greeceButton);
         englishButton = findViewById(R.id.englandButton);
@@ -129,7 +140,6 @@ public class OptionsActivity extends BaseClass  {
         soundButton = findViewById(R.id.sound);
 
     }
-
 
 
 

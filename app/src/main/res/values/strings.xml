@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">The Biggest Quiz </string>
     <string name="newgame">New game</string>
@@ -38,6 +39,7 @@
     <string name="historyknowledge">Im sure you dont rembember\nthat much</string>
     <string name="musicknowledge">Lets rock or pop</string>
     <string name="sportknowledge">Muscles and Sports</string>
+    <string name="Sound">Sound</string>
 
     <!--Category subtittles-->
 

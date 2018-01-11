@@ -14,14 +14,23 @@
      android:layout_marginTop="@dimen/imagesTOPscreenOption"
      />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/languagechoice"
+        android:fontFamily="@font/unlock"
+        android:textColor="@color/ColorFonts"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:shadowColor="#000"
+        android:shadowDx="1.3"
+        android:shadowDy="1.5"
+        android:shadowRadius="32"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/OptionsALLtop"
 
-    <ImageView
-      android:background="@drawable/lang"
-      android:layout_marginTop="@dimen/OptionsALLtop"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      />
+        />
+
 
    <RelativeLayout
        android:layout_width="match_parent"
@@ -69,36 +78,44 @@
    </RelativeLayout>
 
 
-    <ImageView
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/soundoptions"
+        android:text="@string/soundoptions"
+        android:fontFamily="@font/unlock"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/OptionsALLtop"
-        />
+        android:layout_margin="@dimen/OptionsALLtop"
+        android:textColor="@color/ColorFonts" />
 
 
     <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+
     >
 
 
-        <ImageView
+        <TextView
             android:layout_alignParentTop="true"
             android:id="@+id/soundtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/soundmarginL"
             android:layout_centerVertical="true"
-            android:src="@drawable/sound"
-            android:layout_marginStart="@dimen/soundmarginL" />
+            android:layout_marginStart="@dimen/soundmarginL"
+            android:text="@string/Sound"
+            android:textColor="@color/ColorFonts"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            />
 
         <ToggleButton
             android:id="@+id/sound"
             android:layout_width="@dimen/TogglebuttonW"
             android:layout_height="@dimen/TogglebuttonH"
-            android:layout_marginLeft="@dimen/buttonML"
+
             android:layout_alignLeft="@+id/soundtitle"
             android:layout_alignStart="@+id/soundtitle"
             android:layout_below="@+id/soundtitle"
@@ -106,10 +123,9 @@
             android:background="@drawable/on"
             android:textOn=""
             android:textOff=""
-            android:layout_marginStart="@dimen/buttonML" />
+             />
 
-    <ImageView
-        android:src="@drawable/music"
+    <TextView
         android:layout_alignParentTop="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -117,9 +133,13 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="@dimen/soundmarginL"
         android:layout_alignParentRight="true"
-        android:textSize="@dimen/textSizes"
+        android:textSize="23sp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/soundmarginL" />
+        android:layout_marginEnd="@dimen/soundmarginL"
+        android:textStyle="bold"
+        android:textColor="@color/ColorFonts"
+        android:text="@string/Music"
+        />
     <ToggleButton
         android:id="@+id/music"
         android:layout_width="@dimen/TogglebuttonW"
@@ -127,12 +147,11 @@
         android:background="@drawable/on"
         android:layout_alignRight="@id/musictext"
         android:layout_alignEnd="@id/musictext"
-        android:layout_marginRight="@dimen/something"
         android:layout_below="@id/musictext"
         android:layout_marginTop="@dimen/buttonsup"
         android:textOff=""
         android:textOn=""
-        android:layout_marginEnd="@dimen/something" />
+        />
 
     </RelativeLayout>
 

@@ -1,14 +1,13 @@
 package com.example.android.thequizapp;
 
 import android.content.Intent;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MenuActivity extends BaseClass {
+public class MenuActivity extends BaseClass  {
 
     private Button newgame;
     private Button store;
@@ -114,7 +113,7 @@ public class MenuActivity extends BaseClass {
         super.onResume();
         Music();
         Sound();
-
+        loadLocale();
     }
 
 
@@ -125,7 +124,8 @@ public class MenuActivity extends BaseClass {
     }
 
     public void setUp() {
-
+        String lang = loadLocale();
+        changeLocale(lang);
         newgame = findViewById(R.id.newgame);
         options = findViewById(R.id.options);
         achievments = findViewById(R.id.achievments);
@@ -134,8 +134,6 @@ public class MenuActivity extends BaseClass {
         fblike = findViewById(R.id.likefb);
         share = findViewById(R.id.share);
     }
-
-
 
 
 }

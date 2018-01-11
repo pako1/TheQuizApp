@@ -10,8 +10,8 @@
     <string name="se">Εφέ</string>
     <string name="soundoptions">Εφέ</string>
     <string name="languagechoice">Επιλογή Γλώσσας</string>
-    <string name="best_score">Καλύτερο σκόρ</string>
-    <string name="lastscore">σκόρ</string>
+    <string name="best_score">Καλύτερο Σκόρ: </string>
+    <string name="lastscore">Σκόρ:</string>
     <string name="question">Ερώτηση</string>
     <string name="position">θέση</string>
     <string name="subtittle">υπότιτλος</string>
@@ -30,4 +30,5 @@
     <string name="historyknowledge">Δεν παίζει να θυμάσαι τόσα</string>
     <string name="musicknowledge">"Ας ροκάρουμε "</string>
     <string name="sportknowledge">Μύες και γυμναστική</string>
+    <string name="Sound">Ήχοι</string>
 </resources>

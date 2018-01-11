@@ -12,11 +12,11 @@
     <dimen name="OpCountriesMl">40dp</dimen>
     <dimen name="highlanguage">70dp</dimen>
     <dimen name="germansw">85dp</dimen>
-    <dimen name="soundmarginL">30dp</dimen>
+    <dimen name="soundmarginL">45dp</dimen>
     <dimen name="buttonML">24dp</dimen>
     <dimen name="TogglebuttonW">60dp</dimen>
     <dimen name="TogglebuttonH">60dp</dimen>
-    <dimen name="something">20dp</dimen>
+    <dimen name="something">0dp</dimen>
     <dimen name="textsizeScore">40sp</dimen>
     <dimen name="marginButton">15dp</dimen>
 </resources>
