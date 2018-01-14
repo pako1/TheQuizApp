@@ -101,6 +101,7 @@ public class MusicService extends Service
             if(player.isPlaying())
             {
                 player.stop();
+                player.release();
             }
 
             player.release();

@@ -46,7 +46,6 @@ public class QuestionBank {
         try {
 
             myDataBaseHelper.createDataBase();
-
         } catch (IOException ioe) {
 
             throw new Error("Unable to create database");

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">The Biggest Quiz </string>
+    <string name="db_name">questionBank_EN</string>
     <string name="newgame">New game</string>
     <string name="options">Options</string>
     <string name="achievments">achievements</string>

@@ -66,9 +66,11 @@ public class GameActivity extends BaseClass {
                     Quizintent.putExtra("position", position);
                     startActivity(Quizintent);
                 } else if (position == 2) {
-                    Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
-                    Quizintent.putExtra("position", position);
-                    startActivity(Quizintent);
+
+                        Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
+                        Quizintent.putExtra("position", position);
+                        startActivity(Quizintent);
+                    
                 } else if (position == 3) {
                     Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
                     Quizintent.putExtra("position", position);

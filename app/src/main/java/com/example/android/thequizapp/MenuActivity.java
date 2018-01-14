@@ -16,19 +16,16 @@ public class MenuActivity extends BaseClass  {
     private ImageButton fblike;
     private ImageButton share;
     private ImageButton twitter;
-
-
-
+    boolean resume = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        loadLocale();
+        resume=false;
+
         setContentView(R.layout.menu_main);
-       setUp();
-       loadLocale();
-       recreate();
-
-
+        setUp();
 
         newgame.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -106,6 +103,8 @@ public class MenuActivity extends BaseClass  {
     }
 
 
+
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -117,8 +116,20 @@ public class MenuActivity extends BaseClass  {
         super.onResume();
         Music();
         Sound();
+
+
     }
 
+    protected void onRestart(){
+        super.onRestart();
+        if (resume) {
+            recreate();
+            Music();
+            Sound();
+        }else {
+            resume = true;
+        }
+    }
 
 
     @Override
