@@ -34,8 +34,7 @@ public abstract class BaseClass extends AppCompatActivity {
         Locale.setDefault(locale);
         Configuration config = new Configuration();
         config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,
-                getBaseContext().getResources().getDisplayMetrics());
+        getResources().updateConfiguration(config,getResources().getDisplayMetrics());
 
 
     }

@@ -15,7 +15,6 @@ public class QuizActivity extends BaseClass {
 
 
     private QuestionBank mQuestionLibrary = new QuestionBank();
-    private long s1;
     private TextView mScoreView;
     private TextView mQuestionView;
     private Button  mButtonChoice1;
@@ -47,7 +46,7 @@ public class QuizActivity extends BaseClass {
 
 
         //updating the questions
-        mQuestionLibrary.initQuestions(getApplicationContext());
+        mQuestionLibrary.initQuestions(getBaseContext());
         updateQuestion();
 
 
@@ -174,7 +173,6 @@ public class QuizActivity extends BaseClass {
         @Override
         public void onTick(long l) {
             timer.setText(String.valueOf(l / 1000));
-             s1  = l;
             if(l<=4000){
                 timer.setTextColor(Color.RED);
             }

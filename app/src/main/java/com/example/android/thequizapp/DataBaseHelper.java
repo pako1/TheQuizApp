@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import junit.framework.Assert;
@@ -146,12 +147,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
+//         sqLiteDatabase.execSQL(TABLE_QUESTION); // create question table
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-
+           sqLiteDatabase.execSQL("DROP TABLE IF EXISTS '" + TABLE_QUESTION + "'"); //drop table
+          // onCreate(sqLiteDatabase);
     }
 
 
@@ -161,12 +164,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     // public helper methods to access and get content from the database.
     public List<Question> getAllQuestionsList() {
         List<Question> questionArrayList = new ArrayList<>();
+
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
 
         String selectQuery = "SELECT  * FROM " + TABLE_QUESTION;
-
-
-
+        Log.i("Table name",TABLE_QUESTION);
         Cursor c = sqLiteDatabase.rawQuery(selectQuery, null);
 
         // looping through all records and adding to the list

@@ -17,6 +17,7 @@ public class QuestionBank{
     private DataBaseHelper myDataBaseHelper;
 
 
+
     // method returns number of questions in list
     public int getLength(){
         return list.size();
@@ -64,12 +65,13 @@ public class QuestionBank{
             throw new Error("couldnt open database");
 
         }
-
         //get questions/choices/answers from database
         list = myDataBaseHelper.getAllQuestionsList();
 
-    }
 
+
+
+    }
 
 
 

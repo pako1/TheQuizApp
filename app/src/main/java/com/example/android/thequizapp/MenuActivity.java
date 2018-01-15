@@ -20,86 +20,85 @@ public class MenuActivity extends BaseClass  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         loadLocale();
+        super.onCreate(savedInstanceState);
         resume=false;
-
         setContentView(R.layout.menu_main);
         setUp();
 
         newgame.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               clickSound();
-               Intent gameIntent = new Intent(MenuActivity.this, GameActivity.class);
-               startActivity(gameIntent);
-
-           }
-       });
-
-
-
-       achievments.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               clickSound();
-               Intent achievIntent = new Intent(MenuActivity.this, AchievmentActivity.class);
-               startActivity(achievIntent);
-
-           }
-       });
-
-       options.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               clickSound();
-               Intent optionsIntent = new Intent(MenuActivity.this, OptionsActivity.class);
-               startActivity(optionsIntent);
-           }
-       });
-
-       store.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
                 clickSound();
-               Intent storeIntent = new Intent(MenuActivity.this, StoreActivity.class);
-               startActivity(storeIntent);
-           }
-       });
+                Intent gameIntent = new Intent(MenuActivity.this, GameActivity.class);
+                startActivity(gameIntent);
 
-       twitter.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               String urltw= "https://twitter.com/?lang=el";
-               Intent twitterIntent = new Intent(Intent.ACTION_VIEW);
-               twitterIntent.setData(Uri.parse(urltw));
-               startActivity(twitterIntent);
-           }
-       });
+            }
+        });
 
 
-       fblike.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               String urlfb= "https://www.facebook.com/";
-               Intent fbIntent = new Intent(Intent.ACTION_VIEW);
-               fbIntent.setData(Uri.parse(urlfb));
-               startActivity(fbIntent);
-           }
-       });
 
-       share.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-               Intent sendIntent = new Intent();
-               String sharebody  = "Start playing the game with me guys ";
-               sendIntent.setAction(Intent.ACTION_SEND);
-               sendIntent.putExtra(Intent.EXTRA_TEXT, sharebody);
-               sendIntent.setType("text/plain");
-               startActivity(Intent.createChooser(sendIntent,"share" ));
+        achievments.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickSound();
+                Intent achievIntent = new Intent(MenuActivity.this, AchievmentActivity.class);
+                startActivity(achievIntent);
 
-           }
-       });
+            }
+        });
+
+        options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickSound();
+                Intent optionsIntent = new Intent(MenuActivity.this, OptionsActivity.class);
+                startActivity(optionsIntent);
+            }
+        });
+
+        store.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickSound();
+                Intent storeIntent = new Intent(MenuActivity.this, StoreActivity.class);
+                startActivity(storeIntent);
+            }
+        });
+
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String urltw= "https://twitter.com/?lang=el";
+                Intent twitterIntent = new Intent(Intent.ACTION_VIEW);
+                twitterIntent.setData(Uri.parse(urltw));
+                startActivity(twitterIntent);
+            }
+        });
+
+
+        fblike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String urlfb= "https://www.facebook.com/";
+                Intent fbIntent = new Intent(Intent.ACTION_VIEW);
+                fbIntent.setData(Uri.parse(urlfb));
+                startActivity(fbIntent);
+            }
+        });
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent sendIntent = new Intent();
+                String sharebody  = "Start playing the game with me guys ";
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, sharebody);
+                sendIntent.setType("text/plain");
+                startActivity(Intent.createChooser(sendIntent,"share" ));
+
+            }
+        });
     }
 
 
@@ -114,9 +113,13 @@ public class MenuActivity extends BaseClass  {
     @Override
     protected void onResume() {
         super.onResume();
-        Music();
-        Sound();
-
+        if (resume) {
+            recreate();
+            Music();
+            Sound();
+        }else {
+            resume = true;
+        }
 
     }
 

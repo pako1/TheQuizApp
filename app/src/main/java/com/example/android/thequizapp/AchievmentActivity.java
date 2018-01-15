@@ -1,31 +1,13 @@
 package com.example.android.thequizapp;
 
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-
-
-
-public class AchievmentActivity extends BaseClass {
-
+public class AchievmentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.achievment_main);
-  }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Music();
+        setContentView(R.layout.activity_achievment);
     }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        basePause();
-    }
-
-
-
 }

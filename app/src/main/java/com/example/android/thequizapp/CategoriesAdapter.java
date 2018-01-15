@@ -39,14 +39,9 @@ public  class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.C
         holder.textviewTittle.setText(categories.getTittle());
         holder.textViewsubtittle.setText(categories.getSubtittle());
         holder.imageView.setImageDrawable(mctx.getResources().getDrawable(categories.getImage()));
-        if (categories.isImageChanged()){
-            holder.lock.setImageResource(R.drawable.unlock);
-        }
-        else{
-            holder.lock.setImageResource(R.drawable.lock);
-        }
-
+        holder.lock.setImageResource(R.drawable.go);
     }
+
 
     @Override
     public int getItemCount() {
