@@ -2,13 +2,15 @@ package com.example.android.thequizapp;
 
 import android.content.Context;
 import android.database.SQLException;
+import android.support.v7.app.AppCompatActivity;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
-
-public class QuestionBank {
+public class QuestionBank{
 
     // declare list of Question objects
     private List<Question> list = new ArrayList<>();
@@ -40,6 +42,7 @@ public class QuestionBank {
 
 
     public void initQuestions(Context context) {
+
 
         myDataBaseHelper = new DataBaseHelper(context);
 

@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import junit.framework.Assert;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +25,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static String DB_PATH = "/data/data/com.example.android.thequizapp/databases/";
 
 
-
     private SQLiteDatabase myDataBase;
     private final Context myContext;
     private static final String QUESTION = "question";
@@ -36,8 +37,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
-
-
     public DataBaseHelper(Context context) {
         super(context, context.getResources().getString(R.string.db_name), null, 1);
         this.myContext = context;
@@ -46,12 +45,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     /**
      * Creates a empty database on the system and rewrites it with  a database.
-     * */
+     */
     public void createDataBase() throws IOException {
 
         boolean dbExist = checkDataBase();
 
-        if(!dbExist){
+        if (!dbExist) {
             //By calling this method and empty database will be created into the default system path
             // application so we are gonna be able to overwrite that database with a database.
             this.getReadableDatabase();
@@ -71,23 +70,24 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     /**
      * Check if the database already exist to avoid re-copying the file each time you open the application.
+     *
      * @return true if it exists, false if it doesn't
      */
-    private boolean checkDataBase(){
+    private boolean checkDataBase() {
 
         SQLiteDatabase checkDB = null;
 
-        try{
+        try {
             String myPath = DB_PATH + myContext.getString(R.string.db_name);
             checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
 
-        }catch(SQLiteException e){
+        } catch (SQLiteException e) {
 
             //database does't exist yet.
 
         }
 
-        if(checkDB != null){
+        if (checkDB != null) {
 
             checkDB.close();
 
@@ -101,8 +101,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
      * Copies your database from your local assets-folder to the just created empty database in the
      * system folder, from where it can be accessed and handled.
      * This is done by transfering bytestream.
-     * */
-    private void copyDataBase() throws IOException{
+     */
+    private void copyDataBase() throws IOException {
 
         //Open  local db as the input stream
         InputStream myInput = myContext.getAssets().open(myContext.getResources().getString(R.string.db_name));
@@ -116,7 +116,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //transfer bytes from the inputfile to the outputfile
         byte[] buffer = new byte[1024];
         int length;
-        while ((length = myInput.read(buffer))>0){
+        while ((length = myInput.read(buffer)) > 0) {
             myOutput.write(buffer, 0, length);
         }
 
@@ -132,13 +132,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         //Open the database
         String myPath = DB_PATH + myContext.getString(R.string.db_name);
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
     }
 
     @Override
     public synchronized void close() {
 
-        if(myDataBase != null)
+        if (myDataBase != null)
             myDataBase.close();
 
         super.close();
@@ -157,12 +156,17 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
 
+
+
     // public helper methods to access and get content from the database.
     public List<Question> getAllQuestionsList() {
         List<Question> questionArrayList = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+
         String selectQuery = "SELECT  * FROM " + TABLE_QUESTION;
 
-        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+
+
         Cursor c = sqLiteDatabase.rawQuery(selectQuery, null);
 
         // looping through all records and adding to the list
@@ -195,4 +199,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         }
         return questionArrayList;
     }
+
+
+
 }

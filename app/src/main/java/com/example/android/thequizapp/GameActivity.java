@@ -30,14 +30,16 @@ public class GameActivity extends BaseClass {
         categoriesList.add(
                  new Category(getString(R.string.Arts), getString(R.string.artknowledge), R.drawable.categoryarts,true)
         );
-        categoriesList.add(new Category(getString(R.string.Technology), getString(R.string.GeekKnowledge), R.drawable.categorytechnology,true)
+
+        categoriesList.add(new Category(getString(R.string.Geography), getString(R.string.geographyKnowledge), R.drawable.categorygeography,true)
+        );
+
+        categoriesList.add(new Category(getString(R.string.Technology), getString(R.string.GeekKnowledge), R.drawable.categorytechnology,false)
         );
 
         categoriesList.add(new Category(getString(R.string.Mytholohgy), getString(R.string.mythologyknowledge), R.drawable.categorymythology,false)
         );
 
-        categoriesList.add(new Category(getString(R.string.Geography), getString(R.string.geographyKnowledge), R.drawable.categorygeography,false)
-        );
 
         categoriesList.add(new Category(getString(R.string.History), getString(R.string.historyknowledge), R.drawable.categoryhistory,false)
         );
@@ -60,7 +62,6 @@ public class GameActivity extends BaseClass {
                     Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
                     Quizintent.putExtra("position", position);
                     startActivity(Quizintent);
-
                 } else if (position == 1) {
                     Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
                     Quizintent.putExtra("position", position);
@@ -70,7 +71,8 @@ public class GameActivity extends BaseClass {
                         Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
                         Quizintent.putExtra("position", position);
                         startActivity(Quizintent);
-                    
+
+
                 } else if (position == 3) {
                     Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
                     Quizintent.putExtra("position", position);
