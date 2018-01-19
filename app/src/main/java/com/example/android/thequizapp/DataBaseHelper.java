@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import junit.framework.Assert;
@@ -28,14 +29,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     private SQLiteDatabase myDataBase;
     private final Context myContext;
+    // for questions
     private static final String QUESTION = "question";
     private static final String CHOICE1 = "choice1";
     private static final String CHOICE2 = "choice2";
     private static final String CHOICE3 = "choice3";
     private static final String CHOICE4 = "choice4";
-    private static final String ANSWER = "answer";
+    private static final String ANSWER  = "answer";
     private static final String TABLE_QUESTION = "QuestionBank";
 
+    //for country
+    private static final String TABLE_COUNTRY = "CountryBank";
+    private static final String IMAGE  = "image";
+    private static final String FANSWER = "answer";
 
 
     public DataBaseHelper(Context context) {
@@ -153,12 +159,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-           sqLiteDatabase.execSQL("DROP TABLE IF EXISTS '" + TABLE_QUESTION + "'"); //drop table
-          // onCreate(sqLiteDatabase);
+        sqLiteDatabase.execSQL("DROP TABLE IF EXISTS '" + TABLE_QUESTION + "'"); //drop table
+        // onCreate(sqLiteDatabase);
     }
-
-
-
 
 
     // public helper methods to access and get content from the database.
@@ -168,7 +171,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
 
         String selectQuery = "SELECT  * FROM " + TABLE_QUESTION;
-        Log.i("Table name",TABLE_QUESTION);
+        Log.i("Table name", TABLE_QUESTION);
         Cursor c = sqLiteDatabase.rawQuery(selectQuery, null);
 
         // looping through all records and adding to the list
@@ -176,22 +179,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             do {
                 Question question = new Question();
 
-                String questText= c.getString(c.getColumnIndex(QUESTION)).trim();
+                String questText = c.getString(c.getColumnIndex(QUESTION)).trim();
                 question.setQuestion(questText);
 
-                String choice1Text= c.getString(c.getColumnIndex(CHOICE1)).trim();
-                question.setChoice(0,choice1Text);
+                String choice1Text = c.getString(c.getColumnIndex(CHOICE1)).trim();
+                question.setChoice(0, choice1Text);
 
-                String choice2Text= c.getString(c.getColumnIndex(CHOICE2)).trim();
-                question.setChoice(1,choice2Text);
+                String choice2Text = c.getString(c.getColumnIndex(CHOICE2)).trim();
+                question.setChoice(1, choice2Text);
 
-                String choice3Text= c.getString(c.getColumnIndex(CHOICE3)).trim();
-                question.setChoice(2,choice3Text);
+                String choice3Text = c.getString(c.getColumnIndex(CHOICE3)).trim();
+                question.setChoice(2, choice3Text);
 
-                String choice4Text= c.getString(c.getColumnIndex(CHOICE4)).trim();
-                question.setChoice(3,choice4Text);
+                String choice4Text = c.getString(c.getColumnIndex(CHOICE4)).trim();
+                question.setChoice(3, choice4Text);
 
-                String answerText= c.getString(c.getColumnIndex(ANSWER)).trim();
+                String answerText = c.getString(c.getColumnIndex(ANSWER)).trim();
                 question.setAnswer(answerText);
 
                 // adding to Questions list
@@ -202,6 +205,32 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return questionArrayList;
     }
 
+    public List<Country> getAllCountriesList() {
+        List<Country> countryList = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        String selectQuery = "SELECT  * FROM " + TABLE_COUNTRY;
+        Log.i("Table name", TABLE_COUNTRY);
+        Cursor c = sqLiteDatabase.rawQuery(selectQuery, null);
+
+        // looping through all records and adding to the list
+        if (c.moveToFirst()) {
+            do {
+                Country country  = new Country();
+
+                String Image = c.getString(c.getColumnIndex(IMAGE));
+                country.setImage(Image);
+
+                String answerText = c.getString(c.getColumnIndex(FANSWER));
+                country.setCountryAnswer(answerText);
 
 
+                // adding to Questions list
+                countryList.add(country);
+
+            } while (c.moveToNext());
+            Collections.shuffle(countryList);
+        }
+        return countryList;
+
+    }
 }

@@ -32,4 +32,7 @@
         <string name="musicknowledge">Lets rock or pop</string>
         <string name="sportknowledge">Muskeln und Sport</string>
     <string name="Sound">Sound</string>
+    <string name="hint_edittext">Land eingeben</string>
+        <string name="check_answer">Antwort prüfen</string>
+    <string name="hint">Hinweis</string>
 </resources>

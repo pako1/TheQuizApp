@@ -18,8 +18,9 @@ public class OptionsActivity extends BaseClass {
     private ImageButton greeceButton;
     private ImageButton englishButton;
     private ToggleButton musicButton;
-    private String lang;
-
+    static final String GERMAN= "de";
+    static final String GREEK= "el";
+    static final String ENGLISH= "en";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +34,8 @@ public class OptionsActivity extends BaseClass {
             public void onClick(View v) {
                 clickSound();
                 Toast.makeText(OptionsActivity.this, "german", Toast.LENGTH_SHORT).show();
-                lang = "de";
-                changeLocale(lang);
-                saveLocale(lang);
+                changeLocale(GERMAN);
+                saveLocale(GERMAN);
                 recreate();
 
             }
@@ -46,9 +46,8 @@ public class OptionsActivity extends BaseClass {
             public void onClick(View v) {
                 clickSound();
                 Toast.makeText(OptionsActivity.this, "english", Toast.LENGTH_SHORT).show();
-                lang = "en";
-                changeLocale(lang);
-                saveLocale(lang);
+                changeLocale(ENGLISH);
+                saveLocale(ENGLISH);
                 recreate();
             }
         });
@@ -57,9 +56,8 @@ public class OptionsActivity extends BaseClass {
             public void onClick(View v) {
                 clickSound();
                 Toast.makeText(OptionsActivity.this, "greek", Toast.LENGTH_SHORT).show();
-                lang = "el";
-                changeLocale(lang);
-                saveLocale(lang);
+                changeLocale(GREEK);
+                saveLocale(GREEK);
                 recreate();
             }
         });
@@ -123,6 +121,7 @@ public class OptionsActivity extends BaseClass {
         String check = getMusicPref();
         if (check.equals("ON")){
             musicButton.setBackgroundResource(R.drawable.on);
+
         }
         if (check.equals("OFF")){
             musicButton.setBackgroundResource(R.drawable.off);

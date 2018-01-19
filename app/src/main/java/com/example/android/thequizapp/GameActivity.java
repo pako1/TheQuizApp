@@ -17,7 +17,6 @@ public class GameActivity extends BaseClass {
     List<Category> categoriesList = new ArrayList<>();
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,26 +27,26 @@ public class GameActivity extends BaseClass {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         categoriesList.add(
-                 new Category(getString(R.string.Arts), getString(R.string.artknowledge), R.drawable.categoryarts,true)
+                new Category(getString(R.string.Arts), getString(R.string.artknowledge), R.drawable.categoryarts, true)
         );
 
-        categoriesList.add(new Category(getString(R.string.Geography), getString(R.string.geographyKnowledge), R.drawable.categorygeography,true)
+        categoriesList.add(new Category(getString(R.string.Geography), getString(R.string.geographyKnowledge), R.drawable.categorygeography, true)
         );
 
-        categoriesList.add(new Category(getString(R.string.Technology), getString(R.string.GeekKnowledge), R.drawable.categorytechnology,false)
+        categoriesList.add(new Category(getString(R.string.Technology), getString(R.string.GeekKnowledge), R.drawable.categorytechnology, false)
         );
 
-        categoriesList.add(new Category(getString(R.string.Mytholohgy), getString(R.string.mythologyknowledge), R.drawable.categorymythology,false)
+        categoriesList.add(new Category(getString(R.string.Mytholohgy), getString(R.string.mythologyknowledge), R.drawable.categorymythology, false)
         );
 
 
-        categoriesList.add(new Category(getString(R.string.History), getString(R.string.historyknowledge), R.drawable.categoryhistory,false)
+        categoriesList.add(new Category(getString(R.string.History), getString(R.string.historyknowledge), R.drawable.categoryhistory, false)
         );
 
-        categoriesList.add(new Category(getString(R.string.CategoryMusic), getString(R.string.musicknowledge), R.drawable.categorymusic,false)
+        categoriesList.add(new Category(getString(R.string.CategoryMusic), getString(R.string.musicknowledge), R.drawable.categorymusic, false)
         );
 
-        categoriesList.add(new Category(getString(R.string.Sports),getString(R.string.sportknowledge), R.drawable.sports,false)
+        categoriesList.add(new Category(getString(R.string.Sports), getString(R.string.sportknowledge), R.drawable.sports, false)
         );
 
         adapter = new CategoriesAdapter(this, categoriesList);
@@ -63,15 +62,16 @@ public class GameActivity extends BaseClass {
                     Quizintent.putExtra("position", position);
                     startActivity(Quizintent);
                 } else if (position == 1) {
+
+                    Intent LogoIntent = new Intent(getApplicationContext(), FlagActivity.class);
+                    LogoIntent.putExtra("position", position);
+                    startActivity(LogoIntent);
+
+                } else if (position == 2) {
+
                     Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
                     Quizintent.putExtra("position", position);
                     startActivity(Quizintent);
-                } else if (position == 2) {
-
-                        Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
-                        Quizintent.putExtra("position", position);
-                        startActivity(Quizintent);
-
 
                 } else if (position == 3) {
                     Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
@@ -94,8 +94,6 @@ public class GameActivity extends BaseClass {
             }
         });
     }
-
-
 
 
     @Override

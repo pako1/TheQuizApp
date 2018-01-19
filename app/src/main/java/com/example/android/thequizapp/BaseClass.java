@@ -83,12 +83,12 @@ public abstract class BaseClass extends AppCompatActivity {
 
     protected String getSoundPref(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        return preferences.getString("SOUND","");
+        return preferences.getString("SOUND","ON");
     }
 
     protected String getMusicPref(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        return preferences.getString("MUSIC","");
+        return preferences.getString("MUSIC","ON");
     }
 
 
@@ -104,7 +104,7 @@ public abstract class BaseClass extends AppCompatActivity {
             editor.putString("SOUND","OFF");
             Toast.makeText(this,"Preference has S off",Toast.LENGTH_SHORT).show();
 
-            editor.commit();
+            editor.apply();
         }
     }
 
@@ -119,7 +119,7 @@ public abstract class BaseClass extends AppCompatActivity {
         if (onORoff.equals("OFF")){
             editor.putString("MUSIC","OFF");
             Toast.makeText(this,"Preference has M off",Toast.LENGTH_SHORT).show();
-            editor.commit();
+            editor.apply();
         }
     }
 

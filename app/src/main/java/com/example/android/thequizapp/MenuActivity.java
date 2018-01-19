@@ -26,6 +26,7 @@ public class MenuActivity extends BaseClass  {
         setContentView(R.layout.menu_main);
         setUp();
 
+
         newgame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,8 +116,6 @@ public class MenuActivity extends BaseClass  {
         super.onResume();
         if (resume) {
             recreate();
-            Music();
-            Sound();
         }else {
             resume = true;
         }
@@ -127,8 +126,6 @@ public class MenuActivity extends BaseClass  {
         super.onRestart();
         if (resume) {
             recreate();
-            Music();
-            Sound();
         }else {
             resume = true;
         }

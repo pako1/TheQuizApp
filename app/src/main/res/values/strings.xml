@@ -41,6 +41,9 @@
     <string name="musicknowledge">Lets rock or pop</string>
     <string name="sportknowledge">Muscles and Sports</string>
     <string name="Sound">Sound</string>
+    <string name="hint_edittext">Enter Country</string>
+    <string name="check_answer">Check answer</string>
+    <string name="hint">Ηint</string>
 
     <!--Category subtittles-->
 

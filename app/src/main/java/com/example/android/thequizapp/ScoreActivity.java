@@ -65,7 +65,7 @@ public class ScoreActivity extends BaseClass {
 
     private void calculateScore(int score){
         SharedPreferences mypref =  getPreferences(MODE_PRIVATE);
-        int highscore = mypref.getInt("highscore",0);
+            int highscore = mypref.getInt("highscore",0);
 
         if (highscore>=score){
             bestScoreView.setText(String.valueOf(highscore));

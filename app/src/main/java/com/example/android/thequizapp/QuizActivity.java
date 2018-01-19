@@ -88,25 +88,6 @@ public class QuizActivity extends BaseClass {
         });
 
 
-        mButtonChoice1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickSound();
-                if(mButtonChoice1.getText().equals(mAnswer)){
-                    mScore+=10;
-                    updateScore(mScore);
-                    updateQuestion();
-                    Toast.makeText(QuizActivity.this, "Nice done!", Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    Toast.makeText(QuizActivity.this, "oh wrong", Toast.LENGTH_SHORT).show();
-                    losingLife();
-                    updateQuestion();
-                }
-            }
-        });
-
-
         mButtonChoice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
