@@ -1,7 +1,10 @@
 package com.example.android.thequizapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -86,6 +89,7 @@ public class FlagActivity extends BaseClass {
     private void goToScore(){
         Intent scoreIntent= new Intent(FlagActivity.this,ScoreActivity.class);
         scoreIntent.putExtra("score",mScore);
+        scoreIntent.putExtra("position",2);
         startActivity(scoreIntent);
         finish();
     }

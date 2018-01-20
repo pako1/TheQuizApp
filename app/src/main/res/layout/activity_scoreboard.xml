@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="com.example.android.thequizapp.ScoreBoardActivity"
+    android:background="@drawable/purple"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/High_Scores"
+        android:text="@string/high_score"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/imagesTOPscreenOption"
+        android:textSize="50sp"
+        android:fontFamily="@font/unlock"
+        android:textColor="@color/ColorFonts"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="30dp"
+        android:layout_below="@id/High_Scores"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:paddingTop="15dp"
+                android:text="@string/Arts"
+                android:fontFamily="@font/unlock"
+                android:textColor="@color/ColorFonts"
+                android:textAlignment="center"
+
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/artscore"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:paddingTop="15dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/unlock"
+                android:textColor="@color/ColorFonts"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bdbdbd" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:paddingTop="15dp"
+                android:text="@string/Geography"
+                android:textAlignment="center"
+                android:fontFamily="@font/unlock"
+                android:textColor="@color/ColorFonts"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/flag_score"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:paddingTop="15dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/unlock"
+                android:textColor="@color/ColorFonts"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bdbdbd" />
+    </LinearLayout>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/ResetButton"
+        android:layout_marginBottom="@dimen/imagesTOPscreenMenu"
+        android:layout_marginRight="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_centerInParent="true"
+        android:text="@string/reset_scores"
+        android:background="@drawable/redbutton"
+        />
+
+</RelativeLayout>

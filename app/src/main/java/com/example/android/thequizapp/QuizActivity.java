@@ -1,9 +1,12 @@
 package com.example.android.thequizapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -192,6 +195,7 @@ public class QuizActivity extends BaseClass {
     private void goToScore(){
         Intent scoreIntent= new Intent(QuizActivity.this,ScoreActivity.class);
         scoreIntent.putExtra("score",mScore);
+        scoreIntent.putExtra("position",1);
         startActivity(scoreIntent);
         finish();
     }

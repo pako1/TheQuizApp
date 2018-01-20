@@ -4,7 +4,6 @@
     <string name="db_name">questionBank_EN</string>
     <string name="newgame">New game</string>
     <string name="options">Options</string>
-    <string name="achievments">achievements</string>
     <string name="store">store</string>
     <string name="share">share</string>
     <string name="Music">Music</string>
@@ -44,6 +43,9 @@
     <string name="hint_edittext">Enter Country</string>
     <string name="check_answer">Check answer</string>
     <string name="hint">Ηint</string>
+    <string name="high_score">Highscores</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="reset_scores">Reset Scores</string>
 
     <!--Category subtittles-->
 

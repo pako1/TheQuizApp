@@ -43,7 +43,7 @@ public class MenuActivity extends BaseClass  {
             @Override
             public void onClick(View v) {
                 clickSound();
-                Intent achievIntent = new Intent(MenuActivity.this, AchievmentActivity.class);
+                Intent achievIntent = new Intent(MenuActivity.this, ScoreBoardActivity.class);
                 startActivity(achievIntent);
 
             }

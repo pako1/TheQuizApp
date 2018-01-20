@@ -4,7 +4,6 @@
     <string name="newgame">Νέο παιχνίδι</string>
     <string name="db_name">questionBank_GR</string>
     <string name="options">Ρυθμίσεις</string>
-    <string name="achievments">Επιτεύγματα</string>
     <string name="store">κατάστημα</string>
     <string name="share">δημοσίευεσε</string>
     <string name="Music">Μουσική</string>
@@ -35,4 +34,7 @@
     <string name="hint_edittext">"Εισαγάγετε χώρα "</string>
     <string name="check_answer">Έλεγχος απάντησης</string>
     <string name="hint">Βοήθεια</string>
+    <string name="high_score">Τοπ σκορς</string>
+    <string name="scoreboard">Τοπ σκορς</string>
+    <string name="reset_scores">Επαναφορά</string>
 </resources>

@@ -48,7 +48,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".AchievmentActivity" />
+        <activity android:name=".ScoreBoardActivity" />
         <activity android:name=".FlagActivity"></activity>
     </application>
 
