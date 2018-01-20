@@ -37,4 +37,5 @@
     <string name="high_score">Highscores</string>
     <string name="scoreboard">Leistungen</string>
     <string name="reset_scores">Reset Scores</string>
+    <string name="total_score">Punktzahl</string>
 </resources>

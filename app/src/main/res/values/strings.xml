@@ -46,6 +46,7 @@
     <string name="high_score">Highscores</string>
     <string name="scoreboard">Scoreboard</string>
     <string name="reset_scores">Reset Scores</string>
+    <string name="total_score">Total Score</string>
 
     <!--Category subtittles-->
 

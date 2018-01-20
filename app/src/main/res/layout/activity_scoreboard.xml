@@ -20,13 +20,40 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
         android:textColor="@color/ColorFonts"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Totalscore"
+        android:layout_below="@id/High_Scores"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/total_score"
+        android:fontFamily="@font/unlock"
+        android:textColor="@color/ColorFonts"
+        android:textSize="32sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Points"
+        android:layout_below="@id/Totalscore"
+        android:layout_centerInParent="true"
+        android:text="0"
+        android:fontFamily="@font/unlock"
+        android:textColor="@color/ColorFonts"
+        android:textSize="28sp"
+        />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="30dp"
-        android:layout_below="@id/High_Scores"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/Points"
         >
 
         <LinearLayout
@@ -43,7 +70,6 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
                 android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
                 android:textAlignment="center"
-
                 android:textSize="20sp" />
 
             <TextView
@@ -55,7 +81,7 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
                 android:textAlignment="center"
                 android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <TextView
@@ -76,7 +102,7 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
                 android:textAlignment="center"
                 android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/flag_score"
@@ -87,7 +113,7 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
                 android:textAlignment="center"
                 android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <TextView

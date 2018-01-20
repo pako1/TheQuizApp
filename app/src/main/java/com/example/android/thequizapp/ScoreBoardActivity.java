@@ -1,5 +1,6 @@
 package com.example.android.thequizapp;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -11,15 +12,17 @@ import android.widget.TextView;
 public class ScoreBoardActivity extends AppCompatActivity {
     TextView flagscore;
     TextView artscore;
+    TextView TotalPoints;
     Button   reset;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard);
 
         setup();
-        setupScore();
-
+        setupScores();
+        calculateTotal();
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,12 +42,21 @@ public class ScoreBoardActivity extends AppCompatActivity {
         flagscore = findViewById(R.id.flag_score);
         artscore  = findViewById(R.id.artscore);
         reset     = findViewById(R.id.ResetButton);
+        TotalPoints =findViewById(R.id.Points);
     }
 
-    private void setupScore(){
+    private void setupScores(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         flagscore.setText(String.valueOf(preferences.getInt("flagscore",0)));
         artscore.setText(String.valueOf(preferences.getInt("artscore",0)));
+    }
+
+    private void calculateTotal(){
+        int Sum=0;
+        int flagscore1 = Integer.parseInt(flagscore.getText().toString());
+        int artscore1  = Integer.parseInt(artscore.getText().toString());
+        Sum=Sum+flagscore1+artscore1 ;
+        TotalPoints.setText(String.valueOf(Sum));
     }
 
 }
