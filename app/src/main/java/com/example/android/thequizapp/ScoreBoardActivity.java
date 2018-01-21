@@ -1,7 +1,9 @@
 package com.example.android.thequizapp;
 
-import android.content.Intent;
+import android.app.Dialog;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,26 +16,58 @@ public class ScoreBoardActivity extends AppCompatActivity {
     TextView artscore;
     TextView TotalPoints;
     Button   reset;
+    Dialog   myDialog;
+    TextView txtclose;
+    Button btnYes;
+    Button btnNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scoreboard);
-
+        myDialog = new Dialog(this);
         setup();
         setupScores();
         calculateTotal();
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                SharedPreferences.Editor editor = mypref.edit();
-                editor.putInt("flagscore", 0);
-                editor.putInt("artscore", 0);
-                editor.apply();
-                recreate();
+                showDialog();
             }
         });
+
+    }
+
+    private void showDialog(){
+
+        myDialog.setContentView(R.layout.custom_dialog);
+        txtclose = myDialog.findViewById(R.id.txtclose);
+        btnYes   = myDialog.findViewById(R.id.yes);
+        btnNo    = myDialog.findViewById(R.id.no);
+
+        txtclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+
+        btnYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetall();
+            }
+        });
+
+        btnNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        myDialog.show();
 
     }
 
@@ -59,4 +93,12 @@ public class ScoreBoardActivity extends AppCompatActivity {
         TotalPoints.setText(String.valueOf(Sum));
     }
 
+    private void resetall(){
+        SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = mypref.edit();
+        editor.putInt("flagscore", 0);
+        editor.putInt("artscore", 0);
+        editor.apply();
+        recreate();
+    }
 }

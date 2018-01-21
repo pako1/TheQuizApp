@@ -38,4 +38,9 @@
     <string name="scoreboard">Leistungen</string>
     <string name="reset_scores">Reset Scores</string>
     <string name="total_score">Punktzahl</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="this_will_reset_your_score_to_zero_and_reset_all_of_your_high_scores_so_you_can_start_fresh_do_you_want_to_continue">Dies setzt deine Punktzahl auf Null zurück und setzt alle deine Highscores ebenfalls, so dass du neu starten kannst. Möchtest du fortfahren?</string>
+    <string name="warning">WARNUNG</string>
+    <string name="x">X</string>
 </resources>

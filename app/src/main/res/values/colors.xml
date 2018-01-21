@@ -5,5 +5,9 @@
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
     <color name="ColorFonts">#D9E712</color>
+    <color name="blueDark">#2f333f</color>
+    <color name="bluelight">#49acd5</color>
+    <color name="green">#45bc62</color>
+    <color name="orange">#eaad43</color>
 
 </resources>

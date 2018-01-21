@@ -30,7 +30,7 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
         android:text="@string/total_score"
         android:fontFamily="@font/unlock"
         android:textColor="@color/ColorFonts"
-        android:textSize="32sp"
+        android:textSize="20sp"
         />
 
     <TextView
@@ -42,7 +42,7 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
         android:text="0"
         android:fontFamily="@font/unlock"
         android:textColor="@color/ColorFonts"
-        android:textSize="28sp"
+        android:textSize="50sp"
         />
 
 

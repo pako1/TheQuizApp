@@ -38,4 +38,9 @@
     <string name="scoreboard">Βαθμολογίες</string>
     <string name="reset_scores">Επαναφορά</string>
     <string name="total_score">Σύνολο</string>
+    <string name="yes">Ναι</string>
+    <string name="no">Οχι</string>
+    <string name="this_will_reset_your_score_to_zero_and_reset_all_of_your_high_scores_so_you_can_start_fresh_do_you_want_to_continue">Αυτό θα επαναφέρει το σκορ στο μηδέν και θα επαναφέρει όλες τις υψηλές βαθμολογίες σας. Θέλετε να συνεχίσετε;</string>
+    <string name="warning">"ΠΡΟΕΙΔΟΠΟΙΗΣΗ "</string>
+    <string name="x">X</string>
 </resources>
