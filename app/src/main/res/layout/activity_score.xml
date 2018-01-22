@@ -19,10 +19,10 @@
         />
     <ImageView
         android:layout_marginTop="@dimen/imagesTOPscreenOption"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/achievment"
         android:id="@+id/iconScore"
+        android:layout_centerInParent="true"
         android:layout_below="@id/TittleScore"
         />
 

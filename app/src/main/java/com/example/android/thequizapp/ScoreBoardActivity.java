@@ -17,7 +17,6 @@ public class ScoreBoardActivity extends AppCompatActivity {
     TextView TotalPoints;
     Button   reset;
     Dialog   myDialog;
-    TextView txtclose;
     Button btnYes;
     Button btnNo;
 
@@ -41,16 +40,9 @@ public class ScoreBoardActivity extends AppCompatActivity {
     private void showDialog(){
 
         myDialog.setContentView(R.layout.custom_dialog);
-        txtclose = myDialog.findViewById(R.id.txtclose);
         btnYes   = myDialog.findViewById(R.id.yes);
         btnNo    = myDialog.findViewById(R.id.no);
 
-        txtclose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myDialog.dismiss();
-            }
-        });
 
         btnYes.setOnClickListener(new View.OnClickListener() {
             @Override

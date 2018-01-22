@@ -1,17 +1,16 @@
 package com.example.android.thequizapp;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 public class QuizActivity extends BaseClass {
 
@@ -24,6 +23,8 @@ public class QuizActivity extends BaseClass {
     private Button  mButtonChoice2;
     private Button  mButtonChoice3;
     private Button  mButtonChoice4;
+    private ImageButton HomeButton;
+    private TextView  SkipQuestion;
     private ImageView heart1;
     private ImageView heart2;
     private ImageView heart3;
@@ -31,9 +32,9 @@ public class QuizActivity extends BaseClass {
     private TextView timer;
     private String mAnswer;
     private int mScore;
-    int QuestionNumber =0;
-    int hearts=3;
-
+    private int QuestionNumber = 0;
+    private int hearts = 3;
+    private int skiptimes = 3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,30 @@ public class QuizActivity extends BaseClass {
         //updating the questions
         mQuestionLibrary.initQuestions(getBaseContext());
         updateQuestion();
+
+        HomeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickSound();
+                Intent returnIntent = new Intent(QuizActivity.this,MenuActivity.class);
+                startActivity(returnIntent);
+                finish();
+            }
+        });
+
+        SkipQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickSound();
+                if(skiptimes>0){
+                    skiptimes--;
+                    updateQuestion();
+                }
+                else{
+                    Toast.makeText(QuizActivity.this,"You have used all your skips",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
 
         mButtonChoice1.setOnClickListener(new View.OnClickListener() {
@@ -202,18 +227,19 @@ public class QuizActivity extends BaseClass {
 
 
     private void setup(){
-
-        timer     = findViewById(R.id.timer);
-        position  = findViewById(R.id.position);
-        mScoreView = findViewById(R.id.score0);
-        mQuestionView = findViewById(R.id.question);
+        SkipQuestion   = findViewById(R.id.skipQuestion);
+        HomeButton     = findViewById(R.id.homeButton);
+        timer          = findViewById(R.id.timer);
+        position       = findViewById(R.id.position);
+        mScoreView     = findViewById(R.id.score0);
+        mQuestionView  = findViewById(R.id.question);
         mButtonChoice1 = findViewById(R.id.choice1);
         mButtonChoice2 = findViewById(R.id.choice2);
         mButtonChoice3 = findViewById(R.id.choice3);
         mButtonChoice4 = findViewById(R.id.choice4);
-        heart1 =findViewById(R.id.heart1);
-        heart2 =findViewById(R.id.heart2);
-        heart3 =findViewById(R.id.heart3);
+        heart1         = findViewById(R.id.heart1);
+        heart2         = findViewById(R.id.heart2);
+        heart3         = findViewById(R.id.heart3);
 
     }
 

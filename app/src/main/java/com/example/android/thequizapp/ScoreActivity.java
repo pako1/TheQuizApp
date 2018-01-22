@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ScoreActivity extends BaseClass {
@@ -14,7 +15,8 @@ public class ScoreActivity extends BaseClass {
     private TextView bestScoreView;
     private ImageButton goMenu;
     private ImageButton playAgain;
-    int highscore;
+    private ImageView iconScore;
+    private int highscore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,9 +62,11 @@ public class ScoreActivity extends BaseClass {
     private void setup(){
 
         finalTextScore = findViewById(R.id.roundScore);
-        bestScoreView = findViewById(R.id.bestscore);
-        goMenu = findViewById(R.id.gomenu);
-        playAgain = findViewById(R.id.playagain);
+        bestScoreView  = findViewById(R.id.bestscore);
+        goMenu         = findViewById(R.id.gomenu);
+        playAgain      = findViewById(R.id.playagain);
+        iconScore      = findViewById(R.id.iconScore);
+
 
     }
 
@@ -77,6 +81,7 @@ public class ScoreActivity extends BaseClass {
                 }
                 else{
                     bestScoreView.setText(String.valueOf(score));
+                    chooseMedal(score);
                     SharedPreferences.Editor editor = mypref.edit();
                     editor.putInt("artscore",score).apply();
                 }
@@ -89,6 +94,7 @@ public class ScoreActivity extends BaseClass {
                 }
                 else{
                     bestScoreView.setText(String.valueOf(score));
+                    chooseMedal(score);
                     SharedPreferences.Editor editor = mypref.edit();
                     editor.putInt("flagscore",score).apply();
                 }
@@ -96,6 +102,19 @@ public class ScoreActivity extends BaseClass {
 
     }
 
+
+    public void chooseMedal(int highscore){
+      if(highscore>0 && highscore<=40){
+        iconScore.setImageResource(R.drawable.top3);
+      }
+      else if(highscore>40 && highscore<=60){
+          
+        iconScore.setImageResource(R.drawable.top2);
+      }
+      else{
+        iconScore.setImageResource(R.drawable.top1);
+      }
+    }
 
     @Override
     protected void onPause() {

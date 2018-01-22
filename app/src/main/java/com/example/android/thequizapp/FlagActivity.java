@@ -1,33 +1,34 @@
 package com.example.android.thequizapp;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class FlagActivity extends BaseClass {
 
+    private TextView  Skip;
+    private ImageButton Home;
     private TextView  mScoreView;
     private Button    mButtonCheckAnswer;
     private Button    mButtonHint;
     private ImageView heart1;
     private ImageView heart2;
     private ImageView heart3;
-    private TextView  mQuestionNumber; // den to xrisimopoiw akoma gia na dei3w se poia erwtisi eimai
+    private TextView  mQuestionNumber; // den to exw balei akoma.
     private EditText  mInput;
-    ImageView imageCountry;
+    private ImageView imageCountry;
     private String    mAnswer;
     private String    input;
     private int       mScore;
-    private int       hearts = 3;
+    private int       hearts     = 3;
     private int       FlagNumber = 0;
+    private int       skiptimes  = 3;
     private FlagBank mFlagLibrary = new FlagBank();
 
 
@@ -41,11 +42,15 @@ public class FlagActivity extends BaseClass {
 
         mFlagLibrary.initCountries(getBaseContext());
         updateCountry();
+        mQuestionNumber.setText(String.valueOf(1));
 
 
         mButtonHint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                clickSound();
+                String help = mAnswer.substring(0,2);
+                Toast.makeText(FlagActivity.this,getString(R.string.help)+help ,Toast.LENGTH_LONG).show();
 
             }
         });
@@ -55,7 +60,7 @@ public class FlagActivity extends BaseClass {
             public void onClick(View v) {
                 clickSound();
                 input = mInput.getEditableText().toString().trim();
-                if(input.equals(mAnswer)) {
+                if(input.equalsIgnoreCase(mAnswer)) {
                     mScore+=10;
                     updateScore(mScore);
                     updateCountry();
@@ -69,11 +74,36 @@ public class FlagActivity extends BaseClass {
             }
         });
 
+        Skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickSound();
+                if(skiptimes>0){
+                    skiptimes--;
+                    updateCountry();
+                }
+                else{
+                    Toast.makeText(FlagActivity.this,"You have used all your skips",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickSound();
+                Intent returnIntent = new Intent(FlagActivity.this,MenuActivity.class);
+                startActivity(returnIntent);
+                finish();
+            }
+        });
 
     }
 
 
     private void setup(){
+        Skip               = findViewById(R.id.skip);
+        Home               = findViewById(R.id.home);
         imageCountry       = findViewById(R.id.imagecountry);
         mInput             = findViewById(R.id.flag_input);
         mQuestionNumber    = findViewById(R.id.flag_questionNumber);
@@ -83,6 +113,7 @@ public class FlagActivity extends BaseClass {
         heart1             = findViewById(R.id.flag_heart1);
         heart2             = findViewById(R.id.flag_heart2);
         heart3             = findViewById(R.id.flag_heart3);
+
 
     }
 
@@ -114,7 +145,7 @@ public class FlagActivity extends BaseClass {
 
     private void updateCountry(){
         if (FlagNumber<mFlagLibrary.getFlagLength()){
-
+            mQuestionNumber.setText(String.valueOf(1+FlagNumber));
             int ImageId = this.getResources().getIdentifier(mFlagLibrary.getCountryImage(FlagNumber).toLowerCase(),"drawable",getPackageName());
             imageCountry.setBackgroundResource(ImageId);
             mAnswer = mFlagLibrary.getFlagAnswer(FlagNumber).trim();
@@ -128,6 +159,7 @@ public class FlagActivity extends BaseClass {
         }
 
     }
+
 
 
 
