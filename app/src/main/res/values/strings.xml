@@ -53,6 +53,9 @@
     <string name="this_will_reset_your_score_to_zero_and_reset_all_of_your_high_scores_so_you_can_start_fresh_do_you_want_to_continue">This will reset your score to zero and reset all of your high-scores so you can start fresh. Do you want to continue?</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="skip">Skip</string>
+    <string name="skipflag">Skip</string>
+    <string name="submit">submit</string>
 
     <!--Category subtittles-->
 

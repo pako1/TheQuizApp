@@ -20,7 +20,7 @@ public class FlagActivity extends BaseClass {
     private ImageView heart1;
     private ImageView heart2;
     private ImageView heart3;
-    private TextView  mQuestionNumber; // den to exw balei akoma.
+    private TextView  mQuestionNumber; 
     private EditText  mInput;
     private ImageView imageCountry;
     private String    mAnswer;
@@ -120,7 +120,7 @@ public class FlagActivity extends BaseClass {
     private void goToScore(){
         Intent scoreIntent= new Intent(FlagActivity.this,ScoreActivity.class);
         scoreIntent.putExtra("score",mScore);
-        scoreIntent.putExtra("position",2);
+        scoreIntent.putExtra("position",1);
         startActivity(scoreIntent);
         finish();
     }

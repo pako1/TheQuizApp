@@ -14,6 +14,7 @@ import android.widget.TextView;
 public class ScoreBoardActivity extends AppCompatActivity {
     TextView flagscore;
     TextView artscore;
+    TextView multiscore;
     TextView TotalPoints;
     Button   reset;
     Dialog   myDialog;
@@ -65,23 +66,27 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
 
     private void setup(){
-        flagscore = findViewById(R.id.flag_score);
-        artscore  = findViewById(R.id.artscore);
-        reset     = findViewById(R.id.ResetButton);
-        TotalPoints =findViewById(R.id.Points);
+        multiscore   = findViewById(R.id.multi_score);
+        flagscore   = findViewById(R.id.flag_score);
+        artscore    = findViewById(R.id.artscore);
+        reset       = findViewById(R.id.ResetButton);
+        TotalPoints = findViewById(R.id.Points);
+
     }
 
     private void setupScores(){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         flagscore.setText(String.valueOf(preferences.getInt("flagscore",0)));
         artscore.setText(String.valueOf(preferences.getInt("artscore",0)));
+        multiscore.setText(String.valueOf(preferences.getInt("multiplescore",0)));
     }
 
     private void calculateTotal(){
         int Sum=0;
-        int flagscore1 = Integer.parseInt(flagscore.getText().toString());
-        int artscore1  = Integer.parseInt(artscore.getText().toString());
-        Sum=Sum+flagscore1+artscore1 ;
+        int flagscore1  = Integer.parseInt(flagscore.getText().toString());
+        int artscore1   = Integer.parseInt(artscore.getText().toString());
+        int multiscore1 = Integer.parseInt(multiscore.getText().toString());
+        Sum=Sum+flagscore1+artscore1+multiscore1;
         TotalPoints.setText(String.valueOf(Sum));
     }
 
@@ -90,6 +95,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = mypref.edit();
         editor.putInt("flagscore", 0);
         editor.putInt("artscore", 0);
+        editor.putInt("multiplescore",0);
         editor.apply();
         recreate();
     }

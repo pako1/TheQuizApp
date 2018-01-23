@@ -120,6 +120,40 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#bdbdbd" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:paddingTop="15dp"
+                android:text="@string/Technology"
+                android:textAlignment="center"
+                android:fontFamily="@font/unlock"
+                android:textColor="@color/ColorFonts"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/multi_score"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:paddingTop="15dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/unlock"
+                android:textColor="@color/ColorFonts"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bdbdbd" />
+
+
     </LinearLayout>
 
 

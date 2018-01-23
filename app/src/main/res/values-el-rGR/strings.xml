@@ -44,4 +44,7 @@
     <string name="warning">"ΠΡΟΕΙΔΟΠΟΙΗΣΗ "</string>
     <string name="x">X</string>
     <string name="help">"Το όνομα της χώρας αρχίζει από "</string>
+    <string name="skip">Skip</string>
+    <string name="skipflag">Skip</string>
+    <string name="submit">Υποβολή</string>
 </resources>

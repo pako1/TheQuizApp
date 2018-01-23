@@ -7,8 +7,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".SplashscreenActivity"
             android:theme="@style/splashscreen">
@@ -49,7 +48,8 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".ScoreBoardActivity" />
-        <activity android:name=".FlagActivity"></activity>
+        <activity android:name=".FlagActivity" />
+        <activity android:name=".MultipleChActivity"></activity>
     </application>
 
 </manifest>

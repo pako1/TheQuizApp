@@ -12,7 +12,7 @@ import java.util.List;
 public class GameActivity extends BaseClass {
 
 
-    RecyclerView recyclerView; // antikeimeno poy exei to recyclerview (layout)
+    RecyclerView recyclerView;
     CategoriesAdapter adapter;
     List<Category> categoriesList = new ArrayList<>();
 
@@ -69,7 +69,7 @@ public class GameActivity extends BaseClass {
 
                 } else if (position == 2) {
 
-                    Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
+                    Intent Quizintent = new Intent(getApplicationContext(), MultipleChActivity.class);
                     Quizintent.putExtra("position", position);
                     startActivity(Quizintent);
 

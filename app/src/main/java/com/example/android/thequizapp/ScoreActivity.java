@@ -72,7 +72,7 @@ public class ScoreActivity extends BaseClass {
 
     private void calculateScore(int score,int position){
         SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-            if (position==1) {
+            if (position == 0) {
 
                 highscore = mypref.getInt("artscore", 0);
 
@@ -86,9 +86,10 @@ public class ScoreActivity extends BaseClass {
                     editor.putInt("artscore",score).apply();
                 }
             }
-            else if(position==2){
+            else if(position == 1){
 
-                highscore =mypref.getInt("flagscore",0);
+                    highscore =mypref.getInt("flagscore",0);
+
                 if (highscore>=score){
                     bestScoreView.setText(String.valueOf(highscore));
                 }
@@ -98,6 +99,20 @@ public class ScoreActivity extends BaseClass {
                     SharedPreferences.Editor editor = mypref.edit();
                     editor.putInt("flagscore",score).apply();
                 }
+            }
+            else if(position == 2) {
+
+                     highscore = mypref.getInt("multiplescore", 0);
+
+                 if (highscore >= score) {
+                    bestScoreView.setText(String.valueOf(highscore));
+                 } else {
+                    bestScoreView.setText(String.valueOf(score));
+                    chooseMedal(score);
+                    SharedPreferences.Editor editor = mypref.edit();
+                    editor.putInt("multiplescore", score).apply();
+
+                 }
             }
 
     }

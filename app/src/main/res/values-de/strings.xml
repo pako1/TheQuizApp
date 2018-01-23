@@ -44,4 +44,7 @@
     <string name="warning">WARNUNG</string>
     <string name="x">X</string>
     <string name="help">"Des Landes Name beginnt mit "</string>
+    <string name="skip">Skip</string>
+    <string name="skipflag">Skip</string>
+    <string name="submit">einreichen</string>
 </resources>

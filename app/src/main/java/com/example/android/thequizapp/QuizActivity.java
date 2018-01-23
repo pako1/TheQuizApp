@@ -220,7 +220,7 @@ public class QuizActivity extends BaseClass {
     private void goToScore(){
         Intent scoreIntent= new Intent(QuizActivity.this,ScoreActivity.class);
         scoreIntent.putExtra("score",mScore);
-        scoreIntent.putExtra("position",1);
+        scoreIntent.putExtra("position",0);
         startActivity(scoreIntent);
         finish();
     }
