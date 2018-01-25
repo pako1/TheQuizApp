@@ -1,75 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context="com.example.android.thequizapp.ScoreBoardActivity"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/purple"
-    >
+    tools:context="com.example.android.thequizapp.ScoreBoardActivity">
 
     <TextView
+        android:id="@+id/High_Scores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/High_Scores"
-        android:text="@string/high_score"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
         android:layout_marginTop="@dimen/imagesTOPscreenOption"
-        android:textSize="50sp"
         android:fontFamily="@font/unlock"
+        android:text="@string/high_score"
         android:textColor="@color/ColorFonts"
-        />
+        android:textSize="50sp" />
 
     <TextView
+        android:id="@+id/Totalscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Totalscore"
         android:layout_below="@id/High_Scores"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
-        android:text="@string/total_score"
         android:fontFamily="@font/unlock"
+        android:text="@string/total_score"
         android:textColor="@color/ColorFonts"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 
     <TextView
+        android:id="@+id/Points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/Points"
         android:layout_below="@id/Totalscore"
         android:layout_centerInParent="true"
-        android:text="0"
         android:fontFamily="@font/unlock"
+        android:text="0"
         android:textColor="@color/ColorFonts"
-        android:textSize="50sp"
-        />
+        android:textSize="50sp" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_below="@id/Points"
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:layout_marginTop="40dp"
-        android:layout_below="@id/Points"
-        >
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
+            android:layout_height="wrap_content">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/unlock"
                 android:paddingTop="15dp"
                 android:text="@string/Arts"
-                android:fontFamily="@font/unlock"
-                android:textColor="@color/ColorFonts"
                 android:textAlignment="center"
+                android:textColor="@color/ColorFonts"
                 android:textSize="20sp" />
 
             <TextView
@@ -77,9 +71,9 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/unlock"
                 android:paddingTop="15dp"
                 android:textAlignment="center"
-                android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -97,10 +91,10 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/unlock"
                 android:paddingTop="15dp"
                 android:text="@string/Geography"
                 android:textAlignment="center"
-                android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
                 android:textSize="20sp" />
 
@@ -109,9 +103,9 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/unlock"
                 android:paddingTop="15dp"
                 android:textAlignment="center"
-                android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -129,10 +123,10 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/unlock"
                 android:paddingTop="15dp"
                 android:text="@string/Technology"
                 android:textAlignment="center"
-                android:fontFamily="@font/unlock"
                 android:textColor="@color/ColorFonts"
                 android:textSize="20sp" />
 
@@ -141,9 +135,41 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:fontFamily="@font/unlock"
                 android:paddingTop="15dp"
                 android:textAlignment="center"
+                android:textColor="@color/ColorFonts"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bdbdbd" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
                 android:fontFamily="@font/unlock"
+                android:paddingTop="15dp"
+                android:text="@string/Mytholohgy"
+                android:textAlignment="center"
+                android:textColor="@color/ColorFonts"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/puzzle_score"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/unlock"
+                android:paddingTop="15dp"
+                android:textAlignment="center"
                 android:textColor="@color/ColorFonts"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -157,18 +183,16 @@ tools:context="com.example.android.thequizapp.ScoreBoardActivity"
     </LinearLayout>
 
 
-
     <Button
+        android:id="@+id/ResetButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:id="@+id/ResetButton"
-        android:layout_marginBottom="@dimen/imagesTOPscreenMenu"
-        android:layout_marginRight="120dp"
-        android:layout_marginLeft="120dp"
         android:layout_centerInParent="true"
-        android:text="@string/reset_scores"
+        android:layout_marginBottom="@dimen/imagesTOPscreenMenu"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="120dp"
         android:background="@drawable/redbutton"
-        />
+        android:text="@string/reset_scores" />
 
 </RelativeLayout>

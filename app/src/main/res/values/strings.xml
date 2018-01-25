@@ -56,6 +56,13 @@
     <string name="skip">Skip</string>
     <string name="skipflag">Skip</string>
     <string name="submit">submit</string>
+    <string name="title_activity_puzzle">PuzzleActivity</string>
+    <string name="restart">restart</string>
+    <string name="success">success</string>
+    <string name="ok">ok</string>
+    <string name="exit">exit</string>
+    <string name="complete">complete</string>
+    <string name="next">next</string>
 
     <!--Category subtittles-->
 

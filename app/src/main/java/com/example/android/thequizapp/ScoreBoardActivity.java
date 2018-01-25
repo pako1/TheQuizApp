@@ -15,6 +15,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
     TextView flagscore;
     TextView artscore;
     TextView multiscore;
+    TextView puzzlescore;
     TextView TotalPoints;
     Button   reset;
     Dialog   myDialog;
@@ -61,12 +62,15 @@ public class ScoreBoardActivity extends AppCompatActivity {
 
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
+        myDialog.setCancelable(false);
+
 
     }
 
 
     private void setup(){
-        multiscore   = findViewById(R.id.multi_score);
+        puzzlescore = findViewById(R.id.puzzle_score);
+        multiscore  = findViewById(R.id.multi_score);
         flagscore   = findViewById(R.id.flag_score);
         artscore    = findViewById(R.id.artscore);
         reset       = findViewById(R.id.ResetButton);
@@ -79,14 +83,17 @@ public class ScoreBoardActivity extends AppCompatActivity {
         flagscore.setText(String.valueOf(preferences.getInt("flagscore",0)));
         artscore.setText(String.valueOf(preferences.getInt("artscore",0)));
         multiscore.setText(String.valueOf(preferences.getInt("multiplescore",0)));
+        puzzlescore.setText(String.valueOf(preferences.getInt("puzzlescore",0)));
     }
 
     private void calculateTotal(){
         int Sum=0;
-        int flagscore1  = Integer.parseInt(flagscore.getText().toString());
-        int artscore1   = Integer.parseInt(artscore.getText().toString());
-        int multiscore1 = Integer.parseInt(multiscore.getText().toString());
-        Sum=Sum+flagscore1+artscore1+multiscore1;
+        int flagscore1   = Integer.parseInt(flagscore.getText().toString());
+        int artscore1    = Integer.parseInt(artscore.getText().toString());
+        int multiscore1  = Integer.parseInt(multiscore.getText().toString());
+        int puzzlescore1 = Integer.parseInt(multiscore.getText().toString());
+
+        Sum=Sum+flagscore1+artscore1+multiscore1+puzzlescore1;
         TotalPoints.setText(String.valueOf(Sum));
     }
 
@@ -96,6 +103,7 @@ public class ScoreBoardActivity extends AppCompatActivity {
         editor.putInt("flagscore", 0);
         editor.putInt("artscore", 0);
         editor.putInt("multiplescore",0);
+        editor.putInt("puzzlescore",0);
         editor.apply();
         recreate();
     }

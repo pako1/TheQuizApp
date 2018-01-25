@@ -8,11 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import android.widget.ListView;
-import android.widget.Toast;
-
-import junit.framework.Assert;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -54,7 +49,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     /**
      * Creates a empty database on the system and rewrites it with  a database.
      */
-    public void createDataBase() throws IOException {
+     void createDataBase() throws IOException {
 
         boolean dbExist = checkDataBase();
 
@@ -135,7 +130,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void openDataBase() throws SQLException {
+     void openDataBase() throws SQLException {
 
         //Open the database
         String myPath = DB_PATH + myContext.getString(R.string.db_name);

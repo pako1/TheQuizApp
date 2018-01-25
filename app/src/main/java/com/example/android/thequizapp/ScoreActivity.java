@@ -113,6 +113,19 @@ public class ScoreActivity extends BaseClass {
                     editor.putInt("multiplescore", score).apply();
 
                  }
+            }else if(position == 3) {
+
+                highscore = mypref.getInt("puzzlescore", 0);
+
+                if (highscore >= score) {
+                    bestScoreView.setText(String.valueOf(highscore));
+                } else {
+                    bestScoreView.setText(String.valueOf(score));
+                    chooseMedal(score);
+                    SharedPreferences.Editor editor = mypref.edit();
+                    editor.putInt("puzzlescore", score).apply();
+
+                }
             }
 
     }
