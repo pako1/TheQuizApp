@@ -8,7 +8,7 @@ public class Country {
     String answer;
 
 
-    public Country(){}
+    Country(){}
 
     public Country(String image,String answer) {
         this.image = image;
@@ -16,11 +16,11 @@ public class Country {
     }
 
 
-    public String getCountryAnswer() {
+     String getCountryAnswer() {
         return answer;
     }
 
-    public void setCountryAnswer(String answer) {
+     void setCountryAnswer(String answer) {
         this.answer = answer;
     }
 

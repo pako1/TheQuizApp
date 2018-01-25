@@ -19,30 +19,30 @@ public class QuestionBank{
 
 
     // method returns number of questions in list
-    public int getLength(){
+     int getLength(){
         return list.size();
     }
 
     // method returns question from list based on list index
-    public String getQuestion(int a) {
+     String getQuestion(int a) {
         return list.get(a).getQuestion();
     }
 
     // method return a single multiple choice item for question based on list index,
     // based on number of multiple choice item in the list - 1, 2, 3 or 4
     // as an argument
-    public String getChoice(int index, int num) {
+     String getChoice(int index, int num) {
         return list.get(index).getChoice(num-1);
     }
 
     //  method returns correct answer for the question based on list index
-    public String getCorrectAnswer(int a) {
+     String getCorrectAnswer(int a) {
         return list.get(a).getAnswer().trim();
     }
 
 
 
-    public void initQuestions(Context context) {
+     void initQuestions(Context context) {
 
 
         myDataBaseHelper = new DataBaseHelper(context);

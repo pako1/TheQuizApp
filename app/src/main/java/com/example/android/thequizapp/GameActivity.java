@@ -1,9 +1,12 @@
 package com.example.android.thequizapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +53,8 @@ public class GameActivity extends BaseClass {
         );
 
         adapter = new CategoriesAdapter(this, categoriesList);
-        recyclerView.setAdapter(adapter);
+        runAnimation(recyclerView,0);
+
 
 
         adapter.setOnItemClickListener(new CategoriesAdapter.OnItemClickListener() {
@@ -93,6 +97,20 @@ public class GameActivity extends BaseClass {
 
             }
         });
+    }
+
+    private void runAnimation(RecyclerView recyclerView, int type) {
+        Context context = recyclerView.getContext();
+        LayoutAnimationController controller;
+
+            controller = AnimationUtils.loadLayoutAnimation(context,R.anim.layout_falldown);
+
+             recyclerView.setAdapter(adapter);
+             recyclerView.getAdapter().notifyDataSetChanged();
+             recyclerView.setLayoutAnimation(controller);
+             recyclerView.scheduleLayoutAnimation();
+
+
     }
 
 

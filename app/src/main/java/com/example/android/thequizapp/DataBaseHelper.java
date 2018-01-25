@@ -44,7 +44,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String FANSWER = "answer";
 
 
-    public DataBaseHelper(Context context) {
+
+     DataBaseHelper(Context context) {
         super(context, context.getResources().getString(R.string.db_name), null, 1);
         this.myContext = context;
 
@@ -165,7 +166,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
     // public helper methods to access and get content from the database.
-    public List<Question> getAllQuestionsList() {
+     List<Question> getAllQuestionsList() {
         List<Question> questionArrayList = new ArrayList<>();
 
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
@@ -205,7 +206,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return questionArrayList;
     }
 
-    public List<Country> getAllCountriesList() {
+     List<Country> getAllCountriesList() {
         List<Country> countryList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         String selectQuery = "SELECT  * FROM " + TABLE_COUNTRY;
@@ -233,4 +234,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return countryList;
 
     }
+
+
+
 }

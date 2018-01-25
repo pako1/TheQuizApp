@@ -6,7 +6,7 @@ public class Question {
     private String[] choice = new String[4];
     private String answer;
 
-    public Question() {
+     Question() {
 
     }
 
@@ -24,19 +24,19 @@ public class Question {
         return question;
     }
 
-    public String getChoice(int i) {
+     String getChoice(int i) {
         return choice[i];
     }
 
-    public String getAnswer() {
+     String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(String answer) {
+     void setAnswer(String answer) {
         this.answer = answer;
     }
 
-    public void setChoice(int i, String choice) {
+     void setChoice(int i, String choice) {
         this.choice[i] = choice;
     }
 
