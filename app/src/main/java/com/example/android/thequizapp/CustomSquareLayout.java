@@ -17,11 +17,6 @@ import android.widget.RelativeLayout;
         }
 
 
-        /*public void setMaxHeight(int maxHeight) {
-            this.maxHeight = maxHeight;
-        }*/
-
-
         @Override
         protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
             // We have to manually resize the child views to match the parent.

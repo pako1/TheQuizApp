@@ -255,6 +255,7 @@ public class QuizActivity extends BaseClass {
         super.onPause();
         basePause();
         if(ctimer!=null){
+
             ctimer.cancel();
         }
     }
@@ -263,6 +264,7 @@ public class QuizActivity extends BaseClass {
     public void onResume() {
         super.onResume();
         Music();
+        ctimer.start();
 
 
     }
