@@ -2,7 +2,10 @@
 <resources>
 
     <array name="flags">
-        <item>@drawable/flag_australia</item>
+        <item>@drawable/ladonbytrejoe</item>
+        <item>@drawable/zeus</item>
+        <item>@drawable/phoenix</item>
+        <item>@drawable/poseidon</item>
 
     </array>
 

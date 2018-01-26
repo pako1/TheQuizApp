@@ -1,15 +1,15 @@
 package com.example.android.thequizapp;
 
-public class PuzzleGame {
+ class PuzzleGame {
 
-    public int [][] mBoard;
-    public static final int BOARD_ROW = 3;
-    public static final int BOARD_COL = 3;
-    public static final int BOARD_SIZE = BOARD_ROW * BOARD_COL;
-    public static int emptySpaceRow;
-    public static int emptySpaceCol;
+     int [][] mBoard;
+     static final int BOARD_ROW = 3;
+     static final int BOARD_COL = 3;
+     static final int BOARD_SIZE = BOARD_ROW * BOARD_COL;
+     static int emptySpaceRow;
+     static int emptySpaceCol;
 
-    public PuzzleGame(){
+     PuzzleGame(){
         int counter = 0;
         mBoard = new int[BOARD_ROW][BOARD_COL];
         for(int i = 0; i < BOARD_ROW; i++){
@@ -21,14 +21,14 @@ public class PuzzleGame {
     }
 
 
-    public void setEmptySpaceRow(int num){
+     void setEmptySpaceRow(int num){
         emptySpaceRow = num;
     }
-    public void setEmptySpaceCol(int num){
+     void setEmptySpaceCol(int num){
         emptySpaceCol = num;
     }
 
-    public void setMove(int moveRow, int moveCol){
+     void setMove(int moveRow, int moveCol){
 
         boolean moveMade = false;
 
@@ -42,7 +42,7 @@ public class PuzzleGame {
                 moveMade = true;
             }
         }
-        if(moveRow+1 <= BOARD_ROW - 1  && moveMade == false){
+        if(moveRow+1 <= BOARD_ROW - 1  && !moveMade){
             //check if empty space is below
             if( (moveRow + 1) == emptySpaceRow && moveCol == emptySpaceCol){
                 //Exchange values
@@ -51,7 +51,7 @@ public class PuzzleGame {
                 moveMade = true;
             }
         }
-        if(moveCol+1 <= BOARD_COL -1 && moveMade == false){
+        if(moveCol+1 <= BOARD_COL -1 && !moveMade){
             //check if empty space is to the right
             if(moveRow == emptySpaceRow && moveCol+1 == emptySpaceCol){
                 //Exchange values
@@ -60,7 +60,7 @@ public class PuzzleGame {
                 moveMade = true;
             }
         }
-        if(moveCol - 1 >= 0 && moveMade == false){
+        if(moveCol - 1 >= 0 && !moveMade){
             //check if empty space is to the left
             if(moveRow == emptySpaceRow && moveCol-1 == emptySpaceCol){
                 //Exchange values
@@ -72,7 +72,7 @@ public class PuzzleGame {
 
     }
 
-    public boolean isAdjacent(int row, int col){
+     boolean isAdjacent(int row, int col){
         if(row - 1 >= 0){
             //check if empty space is above
             if((row - 1) == emptySpaceRow && col == emptySpaceCol){
@@ -101,7 +101,7 @@ public class PuzzleGame {
     }
 
 
-    public boolean isComplete(){
+     boolean isComplete(){
         int counter = 0;
         for(int i = 0; i < BOARD_ROW; i++){
             for(int j = 0; j < BOARD_COL; j++){
