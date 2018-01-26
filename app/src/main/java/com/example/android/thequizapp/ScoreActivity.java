@@ -132,10 +132,10 @@ public class ScoreActivity extends BaseClass {
 
 
     public void chooseMedal(int highscore){
-      if(highscore>0 && highscore<=40){
+      if(highscore>0 && highscore<40){
         iconScore.setImageResource(R.drawable.top3);
       }
-      else if(highscore>40 && highscore<=60){
+      else if(highscore>40 && highscore<60){
           
         iconScore.setImageResource(R.drawable.top2);
       }

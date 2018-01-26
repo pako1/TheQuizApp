@@ -78,7 +78,7 @@ public class GameActivity extends BaseClass {
                     startActivity(Quizintent);
 
                 } else if (position == 3) {
-                    Intent Quizintent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent Quizintent = new Intent(getApplicationContext(), PuzzleActivity.class);
                     Quizintent.putExtra("position", position);
                     startActivity(Quizintent);
                 } else if (position == 4) {

@@ -10,10 +10,10 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.android.thequizapp.MainActivity"
+    tools:context="com.example.android.thequizapp.PuzzleActivity"
     android:background="@drawable/purple"
     tools:ignore="ContentDescription"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_puzzle">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -82,9 +82,9 @@
                 android:background="@null"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="0dp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:onClick="ButtonOnClick"
                 android:scaleType="fitCenter"
@@ -95,9 +95,9 @@
                 android:background="@null"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="105dp"
+                android:layout_marginStart="105dp"
                 android:layout_marginTop="0dp"
                 android:onClick="ButtonOnClick"
                 android:scaleType="fitCenter"
@@ -108,9 +108,9 @@
                 android:background="@null"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="210dp"
+                android:layout_marginStart="210dp"
                 android:layout_marginTop="0dp"
                 android:onClick="ButtonOnClick"
                 android:scaleType="fitCenter" />
@@ -120,9 +120,9 @@
                 android:background="@null"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="0dp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="105dp"
                 android:onClick="ButtonOnClick"
                 android:scaleType="fitCenter" />
@@ -132,9 +132,9 @@
                 android:background="@null"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="105dp"
+                android:layout_marginStart="105dp"
                 android:layout_marginTop="105dp"
                 android:onClick="ButtonOnClick"
                 android:scaleType="fitCenter" />
@@ -144,9 +144,9 @@
                 android:background="@null"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="210dp"
+                android:layout_marginStart="210dp"
                 android:layout_marginTop="105dp"
                 android:onClick="ButtonOnClick"
                 android:scaleType="fitCenter"/>
@@ -156,9 +156,9 @@
                 android:background="@null"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="0dp"
+                android:layout_marginStart="0dp"
                 android:layout_marginTop="210dp"
                 android:onClick="ButtonOnClick"
                 android:scaleType="fitCenter"/>
@@ -168,9 +168,9 @@
                 android:background="@null"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="105dp"
+                android:layout_marginStart="105dp"
                 android:layout_marginTop="210dp"
                 android:onClick="ButtonOnClick"
                 android:scaleType="fitCenter" />
@@ -180,9 +180,9 @@
                 android:background="@null"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginLeft="210dp"
+                android:layout_marginStart="210dp"
                 android:layout_marginTop="210dp"
                 android:onClick="ButtonOnClick"
                 android:scaleType="fitCenter"/>
@@ -191,40 +191,50 @@
 
     </RelativeLayout>
 
+
     <RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/unlock"
-        android:id="@+id/skipPuzzle"
-        android:text="@string/skipflag"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:textAllCaps="true"
-        android:textColor="@color/ColorFonts"
-        android:textSize="22sp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="20dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/box"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/unlock"
+            android:id="@+id/skipPuzzle"
+            android:text="@string/puzzle_skip"
+            android:layout_centerVertical="true"
+            android:textAllCaps="true"
+            android:textColor="@color/ColorFonts"
+            android:textSize="22sp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unsolvable?"
+            android:background="@drawable/purplebutton"
+            android:layout_centerInParent="true"
+            android:textSize="22sp"
+            android:id="@+id/unsolve"
+            android:fontFamily="@font/unlock"
+            android:textColor="@color/ColorFonts"
+            />
 
 
 
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="20dp"
-        android:background="@drawable/home"
-        android:layout_gravity="center"
-        android:id="@+id/Puzzlehome"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="20dp" />
 
-</RelativeLayout>
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/home"
+            android:layout_gravity="center"
+            android:id="@+id/Puzzlehome"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -51,7 +51,7 @@
         <activity android:name=".FlagActivity" />
         <activity android:name=".MultipleChActivity" />
         <activity android:name=".PuzzleActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".PuzzleActivity"></activity>
     </application>
 
 </manifest>
