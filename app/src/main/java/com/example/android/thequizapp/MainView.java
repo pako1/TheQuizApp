@@ -1,3 +1,4 @@
+/*
 package com.example.android.thequizapp;
 
 import android.app.Dialog;
@@ -179,4 +180,4 @@ public class MainView extends View {
         getContext().startActivity(scoreIntent);
     }
 
-}
+}*/

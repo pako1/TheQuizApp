@@ -50,7 +50,8 @@
         <activity android:name=".ScoreBoardActivity" />
         <activity android:name=".FlagActivity" />
         <activity android:name=".MultipleChActivity" />
-        <activity android:name=".PuzzleActivity"></activity>
+        <activity android:name=".PuzzleActivity" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

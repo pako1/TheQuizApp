@@ -1,3 +1,4 @@
+/*
 package com.example.android.thequizapp;
 
 
@@ -99,4 +100,4 @@ public class Board {
         }
         return  true;
     }
-}
+}*/

@@ -1,3 +1,4 @@
+/*
 package com.example.android.thequizapp;
 
 import android.os.Bundle;
@@ -31,4 +32,4 @@ public class PuzzleActivity extends Activity {
         return screenHeight;
     }
 
-}
+}*/
