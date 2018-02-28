@@ -14,17 +14,15 @@ import android.widget.Toast;
 
 public class QuizActivity extends BaseClass {
 
-
-
     private QuestionBank mQuestionLibrary = new QuestionBank();
     private TextView mScoreView;
     private TextView mQuestionView;
-    private Button  mButtonChoice1;
-    private Button  mButtonChoice2;
-    private Button  mButtonChoice3;
-    private Button  mButtonChoice4;
+    private Button mButtonChoice1;
+    private Button mButtonChoice2;
+    private Button mButtonChoice3;
+    private Button mButtonChoice4;
     private ImageButton HomeButton;
-    private TextView  SkipQuestion;
+    private TextView SkipQuestion;
     private ImageView heart1;
     private ImageView heart2;
     private ImageView heart3;
@@ -35,6 +33,7 @@ public class QuizActivity extends BaseClass {
     private int QuestionNumber = 0;
     private int hearts = 3;
     private int skiptimes = 3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +43,7 @@ public class QuizActivity extends BaseClass {
         setup();
         // which category is playing
         Intent intent = getIntent();
-        int  intpos = intent.getIntExtra("position",0);
+        int intpos = intent.getIntExtra("position", 0);
         String sin = Integer.toString(intpos);
         position.setText(sin);
 
@@ -57,7 +56,7 @@ public class QuizActivity extends BaseClass {
             @Override
             public void onClick(View v) {
                 clickSound();
-                Intent returnIntent = new Intent(QuizActivity.this,MenuActivity.class);
+                Intent returnIntent = new Intent(QuizActivity.this, MenuActivity.class);
                 startActivity(returnIntent);
                 finish();
             }
@@ -67,66 +66,59 @@ public class QuizActivity extends BaseClass {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(skiptimes>0){
+                if (skiptimes > 0) {
                     skiptimes--;
                     updateQuestion();
-                }
-                else{
-                    Toast.makeText(QuizActivity.this,"You have used all your skips",Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(QuizActivity.this, "You have used all your skips", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
 
         mButtonChoice1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(mButtonChoice1.getText().equals(mAnswer)){
-                    mScore+=10;
+                if (mButtonChoice1.getText().equals(mAnswer)) {
+                    mScore += 10;
                     updateScore(mScore);
                     updateQuestion();
                     Toast.makeText(QuizActivity.this, "Nice done!", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Toast.makeText(QuizActivity.this, "oh wrong", Toast.LENGTH_SHORT).show();
                     losingLife();
                     updateQuestion();
                 }
             }
         });
-
 
         mButtonChoice2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(mButtonChoice2.getText().equals(mAnswer)){
-                    mScore+=10;
+                if (mButtonChoice2.getText().equals(mAnswer)) {
+                    mScore += 10;
                     updateScore(mScore);
                     updateQuestion();
                     Toast.makeText(QuizActivity.this, "Nice done!", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Toast.makeText(QuizActivity.this, "oh wrong", Toast.LENGTH_SHORT).show();
                     losingLife();
                     updateQuestion();
                 }
             }
         });
-
 
         mButtonChoice3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(mButtonChoice3.getText().equals(mAnswer)){
-                    mScore+=10;
+                if (mButtonChoice3.getText().equals(mAnswer)) {
+                    mScore += 10;
                     updateScore(mScore);
                     updateQuestion();
                     Toast.makeText(QuizActivity.this, "Nice done!", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Toast.makeText(QuizActivity.this, "oh wrong", Toast.LENGTH_SHORT).show();
                     losingLife();
                     updateQuestion();
@@ -134,18 +126,16 @@ public class QuizActivity extends BaseClass {
             }
         });
 
-
         mButtonChoice4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clickSound();
-                if(mButtonChoice4.getText().equals(mAnswer)){
-                    mScore+=10;
+                if (mButtonChoice4.getText().equals(mAnswer)) {
+                    mScore += 10;
                     updateScore(mScore);
                     updateQuestion();
                     Toast.makeText(QuizActivity.this, "Nice done!", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     Toast.makeText(QuizActivity.this, "oh wrong", Toast.LENGTH_SHORT).show();
                     losingLife();
                     updateQuestion();
@@ -156,21 +146,19 @@ public class QuizActivity extends BaseClass {
 
     }
 
-
-    private void updateQuestion(){
-        if(QuestionNumber<mQuestionLibrary.getLength()){
-        mQuestionView.setText(mQuestionLibrary.getQuestion(QuestionNumber).trim());
-        mButtonChoice1.setText(mQuestionLibrary.getChoice(QuestionNumber, 1).trim());
-        mButtonChoice2.setText(mQuestionLibrary.getChoice(QuestionNumber,2).trim());
-        mButtonChoice3.setText(mQuestionLibrary.getChoice(QuestionNumber,3).trim());
-        mButtonChoice4.setText(mQuestionLibrary.getChoice(QuestionNumber,4).trim());
-        mAnswer = mQuestionLibrary.getCorrectAnswer(QuestionNumber).trim();
-        QuestionNumber++;
-        ctimer.cancel();
-        timer.setTextColor(getResources().getColor(R.color.ColorFonts));
-        ctimer.start();
-        }
-        else{
+    private void updateQuestion() {
+        if (QuestionNumber < mQuestionLibrary.getLength()) {
+            mQuestionView.setText(mQuestionLibrary.getQuestion(QuestionNumber).trim());
+            mButtonChoice1.setText(mQuestionLibrary.getChoice(QuestionNumber, 1).trim());
+            mButtonChoice2.setText(mQuestionLibrary.getChoice(QuestionNumber, 2).trim());
+            mButtonChoice3.setText(mQuestionLibrary.getChoice(QuestionNumber, 3).trim());
+            mButtonChoice4.setText(mQuestionLibrary.getChoice(QuestionNumber, 4).trim());
+            mAnswer = mQuestionLibrary.getCorrectAnswer(QuestionNumber).trim();
+            QuestionNumber++;
+            ctimer.cancel();
+            timer.setTextColor(getResources().getColor(R.color.ColorFonts));
+            ctimer.start();
+        } else {
             Toast.makeText(this, "Quiz is over ", Toast.LENGTH_SHORT).show();
             ctimer.cancel();
             goToScore();
@@ -178,11 +166,11 @@ public class QuizActivity extends BaseClass {
         }
     }
 
-    CountDownTimer ctimer = new CountDownTimer(12000,1000) {
+    CountDownTimer ctimer = new CountDownTimer(12000, 1000) {
         @Override
         public void onTick(long l) {
             timer.setText(String.valueOf(l / 1000));
-            if(l<=4000){
+            if (l <= 4000) {
                 timer.setTextColor(Color.RED);
             }
 
@@ -196,57 +184,51 @@ public class QuizActivity extends BaseClass {
         }
     }.start();
 
-
-
-    private void losingLife(){
+    private void losingLife() {
         hearts--;
-        if(hearts==2){
+        if (hearts == 2) {
             heart1.setVisibility(View.GONE);
             ctimer.cancel();
             ctimer.start();
-         }
-        if (hearts==1){
+        }
+        if (hearts == 1) {
             heart2.setVisibility(View.GONE);
             ctimer.cancel();
             ctimer.start();
         }
-        if (hearts==0){
+        if (hearts == 0) {
             heart3.setVisibility(View.GONE);
             ctimer.cancel();
             goToScore();
         }
     }
 
-    private void goToScore(){
-        Intent scoreIntent= new Intent(QuizActivity.this,ScoreActivity.class);
-        scoreIntent.putExtra("score",mScore);
-        scoreIntent.putExtra("position",0);
+    private void goToScore() {
+        Intent scoreIntent = new Intent(QuizActivity.this, ScoreActivity.class);
+        scoreIntent.putExtra("score", mScore);
+        scoreIntent.putExtra("position", 0);
         startActivity(scoreIntent);
         finish();
     }
 
-
-    private void setup(){
-        SkipQuestion   = findViewById(R.id.skipQuestion);
-        HomeButton     = findViewById(R.id.homeButton);
-        timer          = findViewById(R.id.timer);
-        position       = findViewById(R.id.position);
-        mScoreView     = findViewById(R.id.score0);
-        mQuestionView  = findViewById(R.id.question);
+    private void setup() {
+        SkipQuestion = findViewById(R.id.skipQuestion);
+        HomeButton = findViewById(R.id.homeButton);
+        timer = findViewById(R.id.timer);
+        position = findViewById(R.id.position);
+        mScoreView = findViewById(R.id.score0);
+        mQuestionView = findViewById(R.id.question);
         mButtonChoice1 = findViewById(R.id.choice1);
         mButtonChoice2 = findViewById(R.id.choice2);
         mButtonChoice3 = findViewById(R.id.choice3);
         mButtonChoice4 = findViewById(R.id.choice4);
-        heart1         = findViewById(R.id.heart1);
-        heart2         = findViewById(R.id.heart2);
-        heart3         = findViewById(R.id.heart3);
+        heart1 = findViewById(R.id.heart1);
+        heart2 = findViewById(R.id.heart2);
+        heart3 = findViewById(R.id.heart3);
 
     }
 
-
-
-
-    private void updateScore(int mScore){
+    private void updateScore(int mScore) {
         mScoreView.setText(String.valueOf(mScore));
     }
 
@@ -254,7 +236,7 @@ public class QuizActivity extends BaseClass {
     public void onPause() {
         super.onPause();
         basePause();
-        if(ctimer!=null){
+        if (ctimer != null) {
 
             ctimer.cancel();
         }
@@ -270,9 +252,9 @@ public class QuizActivity extends BaseClass {
     }
 
     @Override
-    public void onDestroy(){
+    public void onDestroy() {
         super.onDestroy();
-        if (ctimer!=null){
+        if (ctimer != null) {
             ctimer.cancel();
         }
     }

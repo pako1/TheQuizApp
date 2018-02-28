@@ -1,14 +1,12 @@
 package com.example.android.thequizapp;
 
 
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-
 
 
 public class OptionsActivity extends BaseClass {
@@ -18,16 +16,15 @@ public class OptionsActivity extends BaseClass {
     private ImageButton greeceButton;
     private ImageButton englishButton;
     private ToggleButton musicButton;
-    static final String GERMAN= "de";
-    static final String GREEK= "el";
-    static final String ENGLISH= "en";
+    static final String GERMAN = "de";
+    static final String GREEK = "el";
+    static final String ENGLISH = "en";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.options_main);
         setUpViews();
-
 
         germanyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,13 +62,13 @@ public class OptionsActivity extends BaseClass {
         musicButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked){
+                if (isChecked) {
                     ToggleSoundOn();
                     setMusicPref("ON");
                     setupOnorOff();
                     Music();
                 }
-                if(!isChecked){
+                if (!isChecked) {
                     ToggleSoundOff();
                     setMusicPref("OFF");
                     setupOnorOff();
@@ -81,18 +78,14 @@ public class OptionsActivity extends BaseClass {
             }
         });
 
-
         soundButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-
 
             }
         });
 
     }
-
-
 
     @Override
     protected void onPause() {
@@ -107,29 +100,25 @@ public class OptionsActivity extends BaseClass {
     }
 
     @Override
-    protected void onStart(){
+    protected void onStart() {
         super.onStart();
         setupOnorOff();
         Music();
     }
 
 
-
-
-    private void setupOnorOff(){
+    private void setupOnorOff() {
 
         String check = getMusicPref();
-        if (check.equals("ON")){
+        if (check.equals("ON")) {
             musicButton.setBackgroundResource(R.drawable.on);
 
         }
-        if (check.equals("OFF")){
+        if (check.equals("OFF")) {
             musicButton.setBackgroundResource(R.drawable.off);
         }
 
     }
-
-
 
     @Override
     protected void onDestroy() {
@@ -145,7 +134,6 @@ public class OptionsActivity extends BaseClass {
         soundButton = findViewById(R.id.sound);
 
     }
-
 
 
 }

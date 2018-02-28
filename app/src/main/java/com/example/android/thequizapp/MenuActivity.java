@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class MenuActivity extends BaseClass  {
+public class MenuActivity extends BaseClass {
 
     private Button newgame;
     private Button store;
@@ -22,10 +22,9 @@ public class MenuActivity extends BaseClass  {
     protected void onCreate(Bundle savedInstanceState) {
         loadLocale();
         super.onCreate(savedInstanceState);
-        resume=false;
+        resume = false;
         setContentView(R.layout.menu_main);
         setUp();
-
 
         newgame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,8 +35,6 @@ public class MenuActivity extends BaseClass  {
 
             }
         });
-
-
 
         achievments.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,18 +67,17 @@ public class MenuActivity extends BaseClass  {
         twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String urltw= "https://twitter.com/?lang=el";
+                String urltw = "https://twitter.com/?lang=el";
                 Intent twitterIntent = new Intent(Intent.ACTION_VIEW);
                 twitterIntent.setData(Uri.parse(urltw));
                 startActivity(twitterIntent);
             }
         });
 
-
         fblike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String urlfb= "https://www.facebook.com/";
+                String urlfb = "https://www.facebook.com/";
                 Intent fbIntent = new Intent(Intent.ACTION_VIEW);
                 fbIntent.setData(Uri.parse(urlfb));
                 startActivity(fbIntent);
@@ -92,17 +88,15 @@ public class MenuActivity extends BaseClass  {
             @Override
             public void onClick(View v) {
                 Intent sendIntent = new Intent();
-                String sharebody  = "Start playing the game with me guys ";
+                String sharebody = "Start playing the game with me guys ";
                 sendIntent.setAction(Intent.ACTION_SEND);
                 sendIntent.putExtra(Intent.EXTRA_TEXT, sharebody);
                 sendIntent.setType("text/plain");
-                startActivity(Intent.createChooser(sendIntent,"share" ));
+                startActivity(Intent.createChooser(sendIntent, "share"));
 
             }
         });
     }
-
-
 
 
     @Override
@@ -116,21 +110,20 @@ public class MenuActivity extends BaseClass  {
         super.onResume();
         if (resume) {
             recreate();
-        }else {
+        } else {
             resume = true;
         }
 
     }
 
-    protected void onRestart(){
+    protected void onRestart() {
         super.onRestart();
         if (resume) {
             recreate();
-        }else {
+        } else {
             resume = true;
         }
     }
-
 
     @Override
     protected void onDestroy() {

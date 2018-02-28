@@ -14,11 +14,9 @@ import java.util.List;
 
 public class GameActivity extends BaseClass {
 
-
     RecyclerView recyclerView;
     CategoriesAdapter adapter;
     List<Category> categoriesList = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +107,6 @@ public class GameActivity extends BaseClass {
              recyclerView.getAdapter().notifyDataSetChanged();
              recyclerView.setLayoutAnimation(controller);
              recyclerView.scheduleLayoutAnimation();
-
 
     }
 

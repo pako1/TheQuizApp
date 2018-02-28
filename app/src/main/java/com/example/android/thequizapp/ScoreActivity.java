@@ -24,22 +24,20 @@ public class ScoreActivity extends BaseClass {
         setContentView(R.layout.activity_score);
 
         Intent intent = getIntent();
-        int score = intent.getIntExtra("score",0);
-        int position = intent.getIntExtra("position",0);
+        int score = intent.getIntExtra("score", 0);
+        int position = intent.getIntExtra("position", 0);
         //setting up the views
         setup();
 
-
         finalTextScore.setText(String.valueOf(score));
         //calculating the score
-        calculateScore(score,position);
-
+        calculateScore(score, position);
 
         goMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 clickSound();
-                Intent returnIntent = new Intent(ScoreActivity.this,MenuActivity.class);
+                Intent returnIntent = new Intent(ScoreActivity.this, MenuActivity.class);
                 startActivity(returnIntent);
                 finish();
             }
@@ -49,7 +47,7 @@ public class ScoreActivity extends BaseClass {
             @Override
             public void onClick(View view) {
                 clickSound();
-                Intent goplayintent = new Intent(ScoreActivity.this,GameActivity.class);
+                Intent goplayintent = new Intent(ScoreActivity.this, GameActivity.class);
                 startActivity(goplayintent);
                 finish();
             }
@@ -58,90 +56,85 @@ public class ScoreActivity extends BaseClass {
 
     }
 
-
-    private void setup(){
+    private void setup() {
 
         finalTextScore = findViewById(R.id.roundScore);
-        bestScoreView  = findViewById(R.id.bestscore);
-        goMenu         = findViewById(R.id.gomenu);
-        playAgain      = findViewById(R.id.playagain);
-        iconScore      = findViewById(R.id.iconScore);
-
+        bestScoreView = findViewById(R.id.bestscore);
+        goMenu = findViewById(R.id.gomenu);
+        playAgain = findViewById(R.id.playagain);
+        iconScore = findViewById(R.id.iconScore);
 
     }
 
-    private void calculateScore(int score,int position){
+    private void calculateScore(int score, int position) {
+
         SharedPreferences mypref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-            if (position == 0) {
+        if (position == 0) {
 
-                highscore = mypref.getInt("artscore", 0);
+            highscore = mypref.getInt("artscore", 0);
 
-                if (highscore>=score){
-                    bestScoreView.setText(String.valueOf(highscore));
-                }
-                else{
-                    bestScoreView.setText(String.valueOf(score));
-                    chooseMedal(score);
-                    SharedPreferences.Editor editor = mypref.edit();
-                    editor.putInt("artscore",score).apply();
-                }
+            if (highscore >= score) {
+                bestScoreView.setText(String.valueOf(highscore));
+            } else {
+                bestScoreView.setText(String.valueOf(score));
+                chooseMedal(score);
+                SharedPreferences.Editor editor = mypref.edit();
+                editor.putInt("artscore", score).apply();
             }
-            else if(position == 1){
+        } else if (position == 1) {
 
-                    highscore =mypref.getInt("flagscore",0);
+            highscore = mypref.getInt("flagscore", 0);
 
-                if (highscore>=score){
-                    bestScoreView.setText(String.valueOf(highscore));
-                }
-                else{
-                    bestScoreView.setText(String.valueOf(score));
-                    chooseMedal(score);
-                    SharedPreferences.Editor editor = mypref.edit();
-                    editor.putInt("flagscore",score).apply();
-                }
+            if (highscore >= score) {
+                bestScoreView.setText(String.valueOf(highscore));
+            } else {
+                bestScoreView.setText(String.valueOf(score));
+                chooseMedal(score);
+                SharedPreferences.Editor editor = mypref.edit();
+                editor.putInt("flagscore", score).apply();
             }
-            else if(position == 2) {
+        } else if (position == 2) {
 
-                     highscore = mypref.getInt("multiplescore", 0);
+            highscore = mypref.getInt("multiplescore", 0);
 
-                 if (highscore >= score) {
-                    bestScoreView.setText(String.valueOf(highscore));
-                 } else {
-                    bestScoreView.setText(String.valueOf(score));
-                    chooseMedal(score);
-                    SharedPreferences.Editor editor = mypref.edit();
-                    editor.putInt("multiplescore", score).apply();
+            if (highscore >= score) {
+                bestScoreView.setText(String.valueOf(highscore));
+            } else {
+                bestScoreView.setText(String.valueOf(score));
+                chooseMedal(score);
+                SharedPreferences.Editor editor = mypref.edit();
+                editor.putInt("multiplescore", score).apply();
 
-                 }
-            }else if(position == 3) {
-
-                highscore = mypref.getInt("puzzlescore", 0);
-
-                if (highscore >= score) {
-                    bestScoreView.setText(String.valueOf(highscore));
-                } else {
-                    bestScoreView.setText(String.valueOf(score));
-                    chooseMedal(score);
-                    SharedPreferences.Editor editor = mypref.edit();
-                    editor.putInt("puzzlescore", score).apply();
-
-                }
             }
+        } else if (position == 3) {
+
+            highscore = mypref.getInt("puzzlescore", 0);
+
+            if (highscore >= score) {
+                bestScoreView.setText(String.valueOf(highscore));
+            } else {
+                bestScoreView.setText(String.valueOf(score));
+                chooseMedal(score);
+                SharedPreferences.Editor editor = mypref.edit();
+                editor.putInt("puzzlescore", score).apply();
+
+            }
+        }
 
     }
 
 
-    public void chooseMedal(int highscore){
-      if(highscore>0 && highscore<40){
-        iconScore.setImageResource(R.drawable.top3);
-      }
-      else if(highscore>40 && highscore<60){
-          
-        iconScore.setImageResource(R.drawable.top2);
-      }
-      else{
-        iconScore.setImageResource(R.drawable.top1);
-      }
+    public void chooseMedal(int highscore) {
+
+        if (highscore > 0 && highscore < 40) {
+            iconScore.setImageResource(R.drawable.top3);
+        } else if (highscore > 40 && highscore < 60) {
+
+            iconScore.setImageResource(R.drawable.top2);
+        } else {
+            iconScore.setImageResource(R.drawable.top1);
+        }
+
     }
 
     @Override
@@ -156,10 +149,6 @@ public class ScoreActivity extends BaseClass {
         Music();
 
     }
-
-
-
-
 
 
 }

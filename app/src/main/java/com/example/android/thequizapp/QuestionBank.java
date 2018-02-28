@@ -10,39 +10,35 @@ import java.util.List;
 import java.util.Locale;
 
 
-public class QuestionBank{
+public class QuestionBank {
 
     // declare list of Question objects
     private List<Question> list = new ArrayList<>();
     private DataBaseHelper myDataBaseHelper;
 
-
-
     // method returns number of questions in list
-     int getLength(){
+    int getLength() {
         return list.size();
     }
 
     // method returns question from list based on list index
-     String getQuestion(int a) {
+    String getQuestion(int a) {
         return list.get(a).getQuestion();
     }
 
     // method return a single multiple choice item for question based on list index,
     // based on number of multiple choice item in the list - 1, 2, 3 or 4
     // as an argument
-     String getChoice(int index, int num) {
-        return list.get(index).getChoice(num-1);
+    String getChoice(int index, int num) {
+        return list.get(index).getChoice(num - 1);
     }
 
     //  method returns correct answer for the question based on list index
-     String getCorrectAnswer(int a) {
+    String getCorrectAnswer(int a) {
         return list.get(a).getAnswer().trim();
     }
 
-
-
-     void initQuestions(Context context) {
+    void initQuestions(Context context) {
 
 
         myDataBaseHelper = new DataBaseHelper(context);
@@ -60,7 +56,7 @@ public class QuestionBank{
 
             myDataBaseHelper.openDataBase();
 
-        }catch(SQLException sqle){
+        } catch (SQLException sqle) {
 
             throw new Error("couldnt open database");
 
@@ -68,11 +64,6 @@ public class QuestionBank{
         //get questions/choices/answers from database
         list = myDataBaseHelper.getAllQuestionsList();
 
-
-
-
     }
-
-
 
 }

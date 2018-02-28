@@ -2,6 +2,7 @@
 <resources>
 
     <array name="flags">
+
         <item>@drawable/ladonbytrejoe</item>
         <item>@drawable/zeus</item>
         <item>@drawable/phoenix</item>

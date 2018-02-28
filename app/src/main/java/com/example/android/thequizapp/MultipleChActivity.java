@@ -13,8 +13,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//1. Mou leipei na ftiaxw diki toy pinaka me erwtiseis kai apantiseis.
-
 
 public class MultipleChActivity extends BaseClass {
 
@@ -39,6 +37,8 @@ public class MultipleChActivity extends BaseClass {
     private int mScore;
     private int QuestionNumber = 0;
     private int hearts = 3;
+    private int skiptimes = 3;
+
     CountDownTimer ctimer = new CountDownTimer(12000, 1000) {
         @Override
         public void onTick(long l) {
@@ -46,17 +46,17 @@ public class MultipleChActivity extends BaseClass {
             if (l <= 4000) {
                 timer.setTextColor(Color.RED);
             }
-
         }
 
         @Override
         public void onFinish() {
+
             losingLife();
             updateQuestion();
             timer.setTextColor(getResources().getColor(R.color.ColorFonts));
+
         }
     }.start();
-    private int skiptimes = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +83,6 @@ public class MultipleChActivity extends BaseClass {
             }
         });
 
-
         SkipRQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +95,6 @@ public class MultipleChActivity extends BaseClass {
                 }
             }
         });
-
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,7 +205,6 @@ public class MultipleChActivity extends BaseClass {
     private void updateScore(int mScore) {
         mRScoreView.setText(String.valueOf(mScore));
     }
-
 
     private void setup() {
         submit = findViewById(R.id.submit);

@@ -9,11 +9,11 @@ public class Category {
     private boolean isImageChanged;
 
 
-    public Category(String tittle, String subtittle, int image,boolean isImageChanged) {
+    public Category(String tittle, String subtittle, int image, boolean isImageChanged) {
         this.tittle = tittle;
         this.subtittle = subtittle;
         this.image = image;
-        this.isImageChanged= isImageChanged;
+        this.isImageChanged = isImageChanged;
     }
 
     public boolean isImageChanged() {
@@ -35,7 +35,6 @@ public class Category {
     public int getImage() {
         return image;
     }
-
 
 
 }

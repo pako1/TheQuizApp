@@ -1,113 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="ContentDescription"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/purple"
     android:orientation="vertical"
-    android:background="@drawable/purple">
- <ImageView
-     android:layout_width="match_parent"
-     android:layout_height="wrap_content"
-     android:layout_gravity="center"
-     android:src="@drawable/options"
-     android:layout_marginTop="@dimen/imagesTOPscreenOption"
-     />
+    tools:ignore="ContentDescription">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/imagesTOPscreenOption"
+        android:src="@drawable/options" />
 
     <TextView
+        android:id="@+id/languageCh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/languagechoice"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/OptionsALLtop"
         android:fontFamily="@font/unlock"
+        android:text="@string/languagechoice"
         android:textColor="@color/ColorFonts"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:id="@+id/languageCh"
-        android:layout_gravity="center"
-        android:layout_marginTop="@dimen/OptionsALLtop"
 
         />
 
 
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_marginTop="@dimen/OptionsALLtop"
-       >
-
-       <ImageButton
-           android:id="@+id/germanyButton"
-           android:layout_width="@dimen/germansw"
-           android:layout_height="@dimen/highlanguage"
-           android:layout_centerInParent="true"
-           android:background="@drawable/germany"
-
-           />
-
-
-    <ImageButton
-        android:id="@+id/greeceButton"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/highlanguage"
-        android:background="@drawable/greece"
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/germanyButton"
-        android:layout_marginLeft="@dimen/OpCountriesMl"
-        android:layout_marginRight="@dimen/OpCountriesMl"
-        android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@id/germanyButton" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/OptionsALLtop">
 
-       <ImageButton
-           android:id="@+id/englandButton"
-           android:layout_width="match_parent"
-           android:layout_height="@dimen/highlanguage"
-           android:background="@drawable/england"
-           android:layout_toLeftOf="@+id/germanyButton"
-           android:layout_alignParentLeft="true"
-           android:layout_marginRight="@dimen/OpCountriesMl"
-           android:layout_marginLeft="@dimen/OpCountriesMl"
-           android:layout_toStartOf="@+id/germanyButton"
-           android:layout_alignParentStart="true" />
+        <ImageButton
+            android:id="@+id/germanyButton"
+            android:layout_width="@dimen/germansw"
+            android:layout_height="@dimen/highlanguage"
+            android:layout_centerInParent="true"
+            android:background="@drawable/germany"
+
+            />
 
 
+        <ImageButton
+            android:id="@+id/greeceButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/highlanguage"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="@dimen/OpCountriesMl"
+            android:layout_marginRight="@dimen/OpCountriesMl"
+            android:layout_toEndOf="@id/germanyButton"
+            android:layout_toRightOf="@id/germanyButton"
+            android:background="@drawable/greece" />
+
+        <ImageButton
+            android:id="@+id/englandButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/highlanguage"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/OpCountriesMl"
+            android:layout_marginRight="@dimen/OpCountriesMl"
+            android:layout_toLeftOf="@+id/germanyButton"
+            android:layout_toStartOf="@+id/germanyButton"
+            android:background="@drawable/england" />
 
 
-   </RelativeLayout>
+    </RelativeLayout>
 
 
     <TextView
+        android:id="@+id/SoundOpt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/soundoptions"
-        android:fontFamily="@font/unlock"
-        android:textSize="30sp"
-        android:textStyle="bold"
         android:layout_gravity="center"
         android:layout_margin="@dimen/OptionsALLtop"
-        android:id="@+id/SoundOpt"
-        android:textColor="@color/ColorFonts" />
+        android:fontFamily="@font/unlock"
+        android:text="@string/soundoptions"
+        android:textColor="@color/ColorFonts"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
 
     <RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
 
-    >
+        >
 
 
         <TextView
-            android:layout_alignParentTop="true"
             android:id="@+id/soundtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/soundmarginL"
+            android:layout_alignParentTop="true"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/soundmarginL"
             android:layout_marginStart="@dimen/soundmarginL"
             android:text="@string/Sound"
             android:textColor="@color/ColorFonts"
-            android:textStyle="bold"
             android:textSize="23sp"
-            />
+            android:textStyle="bold" />
 
         <ToggleButton
             android:id="@+id/sound"
@@ -119,40 +115,37 @@
             android:layout_below="@+id/soundtitle"
             android:layout_marginTop="@dimen/buttonsup"
             android:background="@drawable/on"
-            android:textOn=""
             android:textOff=""
-             />
+            android:textOn="" />
 
-    <TextView
-        android:layout_alignParentTop="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/musictext"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="@dimen/soundmarginL"
-        android:layout_alignParentRight="true"
-        android:textSize="23sp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/soundmarginL"
-        android:textStyle="bold"
-        android:textColor="@color/ColorFonts"
-        android:text="@string/Music"
-        />
-    <ToggleButton
-        android:id="@+id/music"
-        android:layout_width="@dimen/TogglebuttonW"
-        android:layout_height="@dimen/TogglebuttonH"
-        android:background="@drawable/on"
-        android:layout_alignRight="@id/musictext"
-        android:layout_alignEnd="@id/musictext"
-        android:layout_below="@id/musictext"
-        android:layout_marginTop="@dimen/buttonsup"
-        android:textOff=""
-        android:textOn=""
-        />
+        <TextView
+            android:id="@+id/musictext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/soundmarginL"
+            android:layout_marginRight="@dimen/soundmarginL"
+            android:text="@string/Music"
+            android:textColor="@color/ColorFonts"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <ToggleButton
+            android:id="@+id/music"
+            android:layout_width="@dimen/TogglebuttonW"
+            android:layout_height="@dimen/TogglebuttonH"
+            android:layout_alignEnd="@id/musictext"
+            android:layout_alignRight="@id/musictext"
+            android:layout_below="@id/musictext"
+            android:layout_marginTop="@dimen/buttonsup"
+            android:background="@drawable/on"
+            android:textOff=""
+            android:textOn="" />
 
     </RelativeLayout>
-
 
 
 </LinearLayout>

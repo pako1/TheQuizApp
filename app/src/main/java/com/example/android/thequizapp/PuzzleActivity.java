@@ -18,15 +18,15 @@ import java.util.Random;
 public class PuzzleActivity extends BaseClass {
 
     PuzzleGame tpGame = new PuzzleGame();
-    int moves = 0;
-    int resource = 0;
-    TextView Skip;
-    ImageButton home;
-    TextView score;
-    TextView info;
-    int mScore = 300;
-    int skiptimes = 4;
-    Button unsolve;
+    private int moves = 0;
+    private int resource = 0;
+    private TextView Skip;
+    private ImageButton home;
+    private TextView score;
+    private TextView info;
+    private int mScore = 300;
+    private int skiptimes = 4;
+    private Button unsolve;
 
     public ImageButton[][] buttonArray = new ImageButton[PuzzleGame.BOARD_ROW][PuzzleGame.BOARD_COL];
 
@@ -70,7 +70,6 @@ public class PuzzleActivity extends BaseClass {
             public void onClick(View v) {
                 clickSound();
                 skipPuzzle();
-
             }
         });
         home.setOnClickListener(new View.OnClickListener() {
@@ -86,18 +85,14 @@ public class PuzzleActivity extends BaseClass {
         unsolve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (skiptimes==0){
+                if (skiptimes == 0) {
                     unsolvableScore();
                     goToScore();
-                }
-                else if (skiptimes>0){
-                    Toast.makeText(PuzzleActivity.this,"You have more skips",Toast.LENGTH_SHORT).show();
+                } else if (skiptimes > 0) {
+                    Toast.makeText(PuzzleActivity.this, "You have more skips", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-
-
 
     }
 
@@ -105,7 +100,7 @@ public class PuzzleActivity extends BaseClass {
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         /*Both xVal and yVal are initialized here instead of
-		 *onCreate because UI is not drawn yet in onCreate thus
+         *onCreate because UI is not drawn yet in onCreate thus
 		 *you cannot get the coordinates of buttons*/
         for (int i = 0; i < PuzzleGame.BOARD_ROW; i++) {
             for (int j = 0; j < PuzzleGame.BOARD_COL; j++) {
@@ -142,7 +137,7 @@ public class PuzzleActivity extends BaseClass {
         Bitmap[] bMapArray = new Bitmap[PuzzleGame.BOARD_SIZE];
 
 		/*Here the scaled 750x750 image is being split up into 9
-		 *250x250 blocks, these blocks are then set as the image on
+         *250x250 blocks, these blocks are then set as the image on
 		 *the various buttons*/
 
         bMapArray[0] = Bitmap.createBitmap(bMapScaled, 0, 0, 250, 250);
@@ -166,7 +161,6 @@ public class PuzzleActivity extends BaseClass {
         buttonArray[2][2].setImageBitmap(bMapArray[8]);
 
     }
-
 
     public void initializeButtonArray() {
         buttonArray[0][0] = findViewById(R.id.zero);
@@ -240,7 +234,6 @@ public class PuzzleActivity extends BaseClass {
 
     }
 
-
     public void resetImages() {
         moves = 0;
         buttonArray[0][0].setImageBitmap(null);
@@ -254,13 +247,12 @@ public class PuzzleActivity extends BaseClass {
         buttonArray[2][2].setImageBitmap(null);
     }
 
-
     public void setup() {
         unsolve = findViewById(R.id.unsolve);
-        Skip   = findViewById(R.id.skipPuzzle);
-        home   = findViewById(R.id.Puzzlehome);
-        score  = findViewById(R.id.puzzle_score300);
-        info   = findViewById(R.id.info);
+        Skip = findViewById(R.id.skipPuzzle);
+        home = findViewById(R.id.Puzzlehome);
+        score = findViewById(R.id.puzzle_score300);
+        info = findViewById(R.id.info);
 
     }
 
@@ -270,10 +262,10 @@ public class PuzzleActivity extends BaseClass {
             mScore = Integer.parseInt(score.getText().toString());
             mScore = mScore - 15;
             score.setText(String.valueOf(mScore));
-            if(Integer.parseInt(score.getText().toString())<0){
+            if (Integer.parseInt(score.getText().toString()) < 0) {
                 score.setText(String.valueOf(0));
             }
-            if (score.getText().toString().equals("0") ) {
+            if (score.getText().toString().equals("0")) {
                 goToScore();
             }
             resetImages();
@@ -285,7 +277,7 @@ public class PuzzleActivity extends BaseClass {
     }
 
     private void goToScore() {
-        if(mScore<0){
+        if (mScore < 0) {
             mScore = 0;
         }
         Intent scoreIntent = new Intent(PuzzleActivity.this, ScoreActivity.class);
@@ -294,7 +286,6 @@ public class PuzzleActivity extends BaseClass {
         startActivity(scoreIntent);
         finish();
     }
-
 
     public void checkIfGameOver() {
         if (tpGame.isComplete()) {
@@ -341,12 +332,11 @@ public class PuzzleActivity extends BaseClass {
         buttonArray[PuzzleGame.emptySpaceRow][PuzzleGame.emptySpaceCol] = temp;
     }
 
-
-
-    public void unsolvableScore(){
+    public void unsolvableScore() {
         mScore = Integer.parseInt(score.getText().toString());
         mScore = 30;
     }
+
     public void calculateScore() {
 
         moves++;
@@ -355,14 +345,13 @@ public class PuzzleActivity extends BaseClass {
         mScore = Integer.parseInt(score.getText().toString());
         mScore = mScore - 2;
         score.setText(String.valueOf(mScore));
-        if(Integer.parseInt(score.getText().toString())<0){
+        if (Integer.parseInt(score.getText().toString()) < 0) {
             score.setText(String.valueOf(0));
         }
-        if (score.getText().toString().equals("0") ) {
+        if (score.getText().toString().equals("0")) {
             goToScore();
         }
     }
-
 
     public void ButtonOnClick(View v) {
         int buttonRow;

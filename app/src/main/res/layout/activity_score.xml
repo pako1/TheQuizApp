@@ -1,93 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="ContentDescription"
-    tools:context="com.example.android.thequizapp.ScoreActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/purple"
-    >
+    tools:context="com.example.android.thequizapp.ScoreActivity"
+    tools:ignore="ContentDescription">
 
     <ImageView
-        android:layout_marginTop="@dimen/imagesTOPscreenOption"
+        android:id="@+id/TittleScore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/imagesTOPscreenOption"
         android:src="@drawable/congratz"
-        android:id="@+id/TittleScore"
 
         />
+
     <ImageView
-        android:layout_marginTop="@dimen/imagesTOPscreenOption"
+        android:id="@+id/iconScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/iconScore"
-        android:layout_centerInParent="true"
         android:layout_below="@id/TittleScore"
-        />
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/imagesTOPscreenOption" />
 
 
     <LinearLayout
+        android:id="@+id/scoretable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_below="@id/iconScore"
         android:layout_centerInParent="true"
-        android:id="@+id/scoretable"
-        >
+        android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="40dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/imagesTOPscreenOption">
+            android:layout_marginBottom="@dimen/imagesTOPscreenOption"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/unlock"
-                android:textColor="@color/ColorFonts"
                 android:text="@string/best_score"
+                android:textColor="@color/ColorFonts"
                 android:textSize="@dimen/textsizeScore" />
+
             <TextView
+                android:id="@+id/bestscore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" 0"
                 android:fontFamily="@font/unlock"
+                android:text=" 0"
                 android:textColor="@color/ColorFonts"
-                android:id="@+id/bestscore"
-                android:textSize="@dimen/textsizeScore"
-                />
+                android:textSize="@dimen/textsizeScore" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/imagesTOPscreenOption"
-            >
+            android:orientation="horizontal">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/lastscore"
                 android:fontFamily="@font/unlock"
-                android:textSize="@dimen/textsizeScore"
+                android:text="@string/lastscore"
                 android:textColor="@color/ColorFonts"
+                android:textSize="@dimen/textsizeScore"
 
                 />
+
             <TextView
+                android:id="@+id/roundScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/unlock"
-                android:id="@+id/roundScore"
                 android:text=" 0"
                 android:textColor="@color/ColorFonts"
-                android:textSize="@dimen/textsizeScore"
-                />
+                android:textSize="@dimen/textsizeScore" />
         </LinearLayout>
-
 
 
     </LinearLayout>
@@ -95,31 +92,27 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_below="@id/scoretable"
         android:layout_alignParentBottom="true"
-        >
+        android:layout_below="@id/scoretable"
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <ImageButton
+            android:id="@+id/gomenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/home"
             android:layout_margin="@dimen/marginButton"
-            android:id="@+id/gomenu"
-            />
-
+            android:background="@drawable/home" />
 
 
         <ImageButton
+            android:id="@+id/playagain"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="@dimen/marginButton"
-            android:background="@drawable/replay"
-            android:id="@+id/playagain"
-            />
+            android:background="@drawable/replay" />
 
     </LinearLayout>
-
 
 
 </RelativeLayout>

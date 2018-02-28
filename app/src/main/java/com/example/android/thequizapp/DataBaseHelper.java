@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,17 +31,14 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String CHOICE2 = "choice2";
     private static final String CHOICE3 = "choice3";
     private static final String CHOICE4 = "choice4";
-    private static final String ANSWER  = "answer";
+    private static final String ANSWER = "answer";
     private static final String TABLE_QUESTION = "QuestionBank";
-
     //for country
     private static final String TABLE_COUNTRY = "CountryBank";
-    private static final String IMAGE  = "image";
+    private static final String IMAGE = "image";
     private static final String FANSWER = "answer";
 
-
-
-     DataBaseHelper(Context context) {
+    DataBaseHelper(Context context) {
         super(context, context.getResources().getString(R.string.db_name), null, 1);
         this.myContext = context;
 
@@ -49,7 +47,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     /**
      * Creates a empty database on the system and rewrites it with  a database.
      */
-     void createDataBase() throws IOException {
+    void createDataBase() throws IOException {
 
         boolean dbExist = checkDataBase();
 
@@ -130,11 +128,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-     void openDataBase() throws SQLException {
-
+    void openDataBase() throws SQLException {
         //Open the database
         String myPath = DB_PATH + myContext.getString(R.string.db_name);
         myDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+
     }
 
     @Override
@@ -161,7 +159,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
     // public helper methods to access and get content from the database.
-     List<Question> getAllQuestionsList() {
+    List<Question> getAllQuestionsList() {
         List<Question> questionArrayList = new ArrayList<>();
 
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
@@ -201,7 +199,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return questionArrayList;
     }
 
-     List<Country> getAllCountriesList() {
+    List<Country> getAllCountriesList() {
         List<Country> countryList = new ArrayList<>();
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         String selectQuery = "SELECT  * FROM " + TABLE_COUNTRY;
@@ -211,7 +209,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         // looping through all records and adding to the list
         if (c.moveToFirst()) {
             do {
-                Country country  = new Country();
+                Country country = new Country();
 
                 String Image = c.getString(c.getColumnIndex(IMAGE));
                 country.setImage(Image);
@@ -229,7 +227,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return countryList;
 
     }
-
 
 
 }

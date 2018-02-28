@@ -8,98 +8,75 @@ import android.os.IBinder;
 import android.widget.Toast;
 
 
-public class MusicService extends Service
-{
+public class MusicService extends Service {
     private final IBinder mBinder = new LocalBinder();
     private MediaPlayer player;
-    private int length =0;
+    private int length = 0;
 
 
-    public class LocalBinder extends Binder
-    {
-        MusicService getService()
-        {
+    public class LocalBinder extends Binder {
+        MusicService getService() {
             return MusicService.this;
         }
     }
 
     @Override
-    public void onCreate()
-    {
+
+    public void onCreate() {
 
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId)
-    {
+    public int onStartCommand(Intent intent, int flags, int startId) {
         // We want this service to continue running until it is explicitly stopped, so return sticky.
         return START_STICKY;
     }
 
     @Override
-    public void onDestroy()
-    {
+    public void onDestroy() {
         destroy();
     }
 
     @Override
-    public IBinder onBind(Intent intent)
-    {
+    public IBinder onBind(Intent intent) {
         return mBinder;
     }
 
 
-    public void play()
-    {
-        try
-        {
-            if(player == null || !player.isPlaying()) {
+    public void play() {
+        try {
+            if (player == null || !player.isPlaying()) {
                 player = MediaPlayer.create(this, R.raw.sound);
                 player.setLooping(true);
                 player.setVolume(0.6f, 0.6f);
-               // player.start();
+                // player.start();
             }
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
-    public void pause()
-    {
-        if(player.isPlaying() && null != player)
-        {
+    public void pause() {
+        if (player.isPlaying() && null != player) {
             player.pause();
             length = player.getCurrentPosition();
         }
     }
 
-
-    public void resume()
-    {
-        try
-        {
-            if(player != null && !player.isPlaying())
-            {
+    public void resume() {
+        try {
+            if (player != null && !player.isPlaying()) {
                 player.seekTo(length);
                 player.start();
             }
-        }
-        catch(Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
-    public void destroy()
-    {
-        if(player != null)
-        {
-            if(player.isPlaying())
-            {
+    public void destroy() {
+        if (player != null) {
+            if (player.isPlaying()) {
                 player.stop();
                 player.release();
             }
