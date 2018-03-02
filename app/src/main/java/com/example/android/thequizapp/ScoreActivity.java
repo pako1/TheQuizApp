@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ScoreActivity extends BaseClass {
 
@@ -16,7 +17,7 @@ public class ScoreActivity extends BaseClass {
     private ImageButton goMenu;
     private ImageButton playAgain;
     private ImageView iconScore;
-    private int highscore;
+    int highscore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,20 +120,37 @@ public class ScoreActivity extends BaseClass {
                 editor.putInt("puzzlescore", score).apply();
 
             }
+        } else if (position == 4) {
+
+            highscore = mypref.getInt("checkscore", 0);
+
+            if (highscore >= score) {
+                bestScoreView.setText(String.valueOf(highscore));
+            } else {
+                bestScoreView.setText(String.valueOf(score));
+                chooseMedal(score);
+                SharedPreferences.Editor editor = mypref.edit();
+                editor.putInt("checkscore", score).apply();
+
+            }
         }
+
+
 
     }
 
-
-    public void chooseMedal(int highscore) {
+    private void chooseMedal(int highscore) {
 
         if (highscore > 0 && highscore < 40) {
             iconScore.setImageResource(R.drawable.top3);
+            Toast.makeText(this, "The score is"+highscore, Toast.LENGTH_SHORT).show();
         } else if (highscore > 40 && highscore < 60) {
-
             iconScore.setImageResource(R.drawable.top2);
+            Toast.makeText(this, "The score is"+highscore, Toast.LENGTH_SHORT).show();
+
         } else {
             iconScore.setImageResource(R.drawable.top1);
+            Toast.makeText(this, "The score is"+highscore, Toast.LENGTH_SHORT).show();
         }
 
     }

@@ -80,7 +80,7 @@ public class GameActivity extends BaseClass {
                     Quizintent.putExtra("position", position);
                     startActivity(Quizintent);
                 } else if (position == 4) {
-                    Intent Quizintent = new Intent(getApplicationContext(), QuizActivity.class);
+                    Intent Quizintent = new Intent(getApplicationContext(), CheckBoxActivity.class);
                     Quizintent.putExtra("position", position);
                     startActivity(Quizintent);
                 } else if (position == 5) {

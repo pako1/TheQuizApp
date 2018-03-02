@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.thequizapp.CheckBoxActivity"
+    android:background="@drawable/purple"
+    tools:ignore="ContentDescription"
+    >
+
+
+    <LinearLayout
+        android:layout_marginTop="100dp"
+        android:id="@+id/box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/questionbackground"
+        android:orientation="horizontal"
+        android:padding="30dp">
+
+        <TextView
+            android:id="@+id/questionCheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/question"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/box"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/questionbackground"
+        >
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/imagesTOPscreenOption"
+        android:text="Kolokotronis" />
+
+    <CheckBox
+        android:id="@+id/checkBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/imagesTOPscreenOption"
+        android:layout_marginRight="22dp"
+        android:text="hitler" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/imagesTOPscreenOption"
+        android:layout_marginRight="4dp"
+        android:text="Bouboulina" />
+
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:text="Select Multiple or Single CheckBox value" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
