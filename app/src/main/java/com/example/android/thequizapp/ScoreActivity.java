@@ -143,14 +143,11 @@ public class ScoreActivity extends BaseClass {
 
         if (highscore > 0 && highscore < 40) {
             iconScore.setImageResource(R.drawable.top3);
-            Toast.makeText(this, "The score is"+highscore, Toast.LENGTH_SHORT).show();
         } else if (highscore > 40 && highscore < 60) {
             iconScore.setImageResource(R.drawable.top2);
-            Toast.makeText(this, "The score is"+highscore, Toast.LENGTH_SHORT).show();
 
         } else {
             iconScore.setImageResource(R.drawable.top1);
-            Toast.makeText(this, "The score is"+highscore, Toast.LENGTH_SHORT).show();
         }
 
     }

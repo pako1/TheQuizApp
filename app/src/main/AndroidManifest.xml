@@ -51,7 +51,6 @@
         <activity android:name=".FlagActivity" />
         <activity android:name=".MultipleChActivity"/>
         <activity android:name=".PuzzleActivity" />
-        <activity android:name=".CheckBoxActivity"/>
 
     </application>
 
